@@ -1,7 +1,7 @@
 
 :root {
   --primary-purple: #4b0082;
-  --accent-blue: #0A0082;
+  --accent-blue: #3795BD;
   --background: #000000;    /* Default dark mode */
   --text: #ffffff;         /* Default dark mode */
   --white: #ffffff;
@@ -14,7 +14,7 @@
   --background: #e1dfdf;    /* Light mode background */
   --text: #000000; /* Light mode text */
   --primary-purple: #3795BD;
-  --accent-blue: #4b0082;
+  --accent-blue: #0A0082;
   --experience-title: #4b0082; /* purple for light mode */
   --experience-dot-bg: #3795BD; /* blue for light mode */
 }
