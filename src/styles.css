@@ -13,8 +13,8 @@
 .light-mode {
   --background: #e1dfdf;    /* Light mode background */
   --text: #000000; /* Light mode text */
-  --primary-purple: #3795BD;
-  --accent-blue: #0A0082;
+  --primary-purple: #0A0082;
+  --accent-blue: #3795BD;;
   --experience-title: #4b0082; /* purple for light mode */
   --experience-dot-bg: #3795BD; /* blue for light mode */
 }
