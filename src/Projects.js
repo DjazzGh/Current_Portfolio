@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import ProjectCard from './ProjectCard.js';
 
 const projectData = [
@@ -112,16 +112,20 @@ function Projects() {
     return (
         <section className="projects" id="projects">
             <h2>My Projects</h2>
-            <div className="filter-buttons">
-        {categories.map((cat) => (
-                <button 
-            key={cat.key}
-            className={`filter-btn ${activeFilter === cat.key ? 'filter-btn-active' : ''}`}
-            onClick={() => handleFilterClick(cat.key)}
-                >
-            {cat.label}
-                </button>
-        ))}
+            <div className="radio-inputs" role="tablist" aria-label="Project Categories">
+              {categories.map((cat) => (
+                <label className="radio" key={cat.key}>
+                  <input
+                    type="radio"
+                    name="project-filter"
+                    value={cat.key}
+                    checked={activeFilter === cat.key}
+                    onChange={() => handleFilterClick(cat.key)}
+                    aria-checked={activeFilter === cat.key}
+                  />
+                  <span className="name">{cat.label}</span>
+                </label>
+              ))}
             </div>
             <div className="project-card-container" style={{ gap: '1.5rem' }}>
         {categories.map((cat) => (

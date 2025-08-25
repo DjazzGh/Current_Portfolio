@@ -263,7 +263,7 @@ section:last-child {
   margin-bottom: 0px;
 }
 #littletext{
-  color: var(--text);
+  color: var(--accent-blue);
 }
 .about-me p {
   color: #ffffff;
@@ -280,35 +280,90 @@ section:last-child {
 }
 
 .card {
-  background: linear-gradient(to bottom, var(--primary-purple) 55%, var(--accent-blue));
-  padding: 20px;
-  border-radius: 10px;
-  width: 250px;
-  color: #ffffff;
-  overflow: hidden; /* Prevents content from spilling out during transition */
+  width: 300px;
+  height: 200px;
+  background-image: linear-gradient(43deg, var(--primary-purple) 0%, var(--accent-blue) 100%);
+  border-radius: 8px;
+  color: var(--white);
+  overflow: hidden;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  cursor: pointer;
 }
 
-.card-icon {
-  font-size: 40px;
-  display: block;
-  margin-bottom: 10px;
-  height: 0; /* Initially hidden */
-  opacity: 0; /* Initially invisible */
-  overflow: hidden;
-  transition: height 0.3s ease, opacity 0.3s ease; /* Smooth reveal */
+.card-content {
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--white);
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  height: 100%;
+}
+.card-content > *:first-child {
+  margin-top: 8px;
+}
+
+.card-content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
 }
 
 .card h3 {
-  font-size: 18px;
-  margin: 10px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: inherit;
+  text-transform: uppercase;
+  margin: 0;
 }
 
-.card p {
+.card p, .card ul {
+  color: inherit;
+  opacity: 0.9;
   font-size: 14px;
-  height: 0; /* Initially hidden */
-  opacity: 0; /* Initially invisible */
-  overflow: hidden;
-  transition: height 1.7s ease, opacity 1.7s ease; /* Smooth reveal */
+  margin: 0;
+}
+
+.card:hover {
+  transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:before,
+.card:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  z-index: 1;
+}
+
+.card:after {
+  left: auto;
+  right: 0;
+}
+
+.card:hover:before {
+  transform: translateX(-100%);
+}
+
+.card:hover:after {
+  transform: translateX(100%);
 }
 
 /* Revealed state */
@@ -402,27 +457,75 @@ section:last-child {
   margin-bottom: 30px;
 }
 
-.filter-buttons {
+/* Radio group (projects filter) */
+.radio-inputs {
+  position: relative;
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 30px;
-  font-family: 'Noto Serif';
+  flex-wrap: wrap;
+  border-radius: 1rem;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-sizing: border-box;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15), -5px -5px 15px rgba(255, 255, 255, 0.8);
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 660px;
+  margin: 0 auto 24px auto;
+  gap: 0.5rem;
 }
 
-.filter-btn {
-  background-color: var(--primary-purple);
-  color: #ffffff;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: none;
+.radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+  position: relative;
+}
+
+.radio-inputs .radio input {
+  display: none;
+}
+
+.radio-inputs .radio .name {
+  display: flex;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.7rem;
+  border: none;
+  padding: 0.7rem 0.9rem;
+  color: #2d3748;
+  font-weight: 500;
+  font-family: inherit;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1), -3px -3px 6px rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
+  overflow: hidden;
 }
 
-.filter-btn-active {
-  background-color: white;
-  color: var(--primary-purple);
+.radio-inputs .radio input:checked + .name {
+  background: linear-gradient(145deg, var(--primary-purple), var(--accent-blue));
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.1), 3px 3px 8px rgba(59, 130, 246, 0.3);
+  transform: translateY(2px);
 }
+
+.radio-inputs .radio:hover .name {
+  background: linear-gradient(145deg, #f0f0f0, #ffffff);
+  transform: translateY(-1px);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.8);
+}
+
+.radio-inputs .radio:hover input:checked + .name {
+  transform: translateY(1px);
+}
+
+/* Optional: responsive shrink */
+@media (max-width: 520px) {
+  .radio-inputs { max-width: 100%; }
+}
+
+/* Remove old filter button styles */
+.filter-buttons, .filter-btn, .filter-btn-active { display: none !important; }
 
 .project-card-container {
   display: flex;
@@ -808,16 +911,6 @@ body {
     font-size: 24px; /* Scale down heading */
   }
 
-  .filter-buttons {
-    flex-wrap: wrap; /* Allow buttons to wrap */
-    gap: 5px; /* Reduce gap */
-  }
-
-  .filter-btn {
-    padding: 8px 15px; /* Reduce button padding */
-    font-size: 14px; /* Scale down text */
-  }
-
   .project-card-container,
   .UIUX-Projects,
   .WebDev-Projects,
@@ -973,4 +1066,67 @@ html, body {
 .project-card-container {
   max-width: 100vw;
   overflow-x: hidden;
+}
+
+/* Compact radio inputs (projects filter) */
+.radio-inputs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: #eee;
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  padding: 0.25rem;
+  width: 100%;
+  max-width: 520px;
+  font-size: 14px;
+  margin: 0 auto 20px auto;
+  gap: 0.25rem;
+}
+
+.radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.radio-inputs .radio input {
+  display: none;
+}
+
+.radio-inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.4rem 0;
+  color: rgba(51, 65, 85, 1);
+  background: transparent;
+  transition: all 0.15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked + .name {
+  background-color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.radio-inputs .radio:hover .name {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Accent color tie-in */
+html:not(.light-mode) .radio-inputs .radio input:checked + .name {
+  outline: 1px solid var(--primary-purple);
+}
+html.light-mode .radio-inputs .radio input:checked + .name {
+  outline: 1px solid var(--accent-blue);
+}
+
+@keyframes select {
+  0% { transform: scale(0.95); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
