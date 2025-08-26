@@ -10,6 +10,7 @@ const projectData = [
     description: 'Developed a dynamic travel planning website that allows users to create personalized travel itineraries by inputting details . Designed an intuitive user interface to enhance user experience and implemented robust backend functionality to store and manage user-generated travel plans efficiently.',
     buttonLink: 'https://drive.google.com/file/d/1VHwEfO7pJmCgP32RBunJhnId59jfu1io/view?usp=sharing',
     buttonText: 'Check Demo →',
+    githubLink: 'https://github.com/DjazzGh/Travel-planning-website',
     techIcons: [
       { src: 'https://img.icons8.com/?size=100&id=20909&format=png&color=000000', alt: 'React Logo', label: 'React' },
       { src: 'https://img.icons8.com/?size=100&id=21278&format=png&color=000000', alt: 'TypeScript Logo', label: 'TypeScript' },
@@ -26,6 +27,7 @@ const projectData = [
     description: 'A real-time chat application that enables users to exchange instant messages and monitor online statuses through a seamless, responsive interface. It incorporates secure user authentication, ensures reliable conversation flow, and implements comprehensive error handling on both client and server sides.',
     buttonLink: 'https://drive.google.com/file/d/1idylEldU17gS_Z220VQiVElw0L5MPkDO/view?usp=sharing',
     buttonText: 'Check Demo →',
+    githubLink: 'https://github.com/DjazzGh/Real-time-chat-app',
     techIcons: [
       { src: 'https://runcode-app-public.s3.amazonaws.com/images/online-reactjs-editor-compiler.original.png', alt: 'ReactJS Logo', label: 'ReactJS' },
       { src: 'https://img.icons8.com/?size=100&id=4PiNHtUJVbLs&format=png&color=000000', alt: 'Tailwind Logo', label: 'Tailwind' },
@@ -41,6 +43,7 @@ const projectData = [
     description: 'Developed a hotel management system that processes 200+ bookings per month, applying Java OOP principles, MVC architecture, and designing an intuitive GUI.',
     buttonLink: 'https://drive.google.com/file/d/1eRXpY78DySlUhs1LJYksW4Jl7lClurW3/view?usp=sharing',
     buttonText: 'Check Demo →',
+    githubLink: 'https://github.com/DjazzGh/Hotel_Management_App',
     techIcons: [
       { src: 'https://img.icons8.com/?size=100&id=13679&format=png&color=000000', alt: 'Java Logo', label: 'Java' },
     ],
@@ -53,6 +56,7 @@ const projectData = [
     description: 'A medical platform focused on enhancing healthcare accessibility and efficiency. It provides intuitive UI/UX designs for seamless appointment scheduling, and medical record management. A smooth and reliable experience for both patients and healthcare professionals.',
     buttonLink: 'https://www.figma.com/design/0NWi4CR09F3swEo0SpP5th/Challenge-3?t=SYV0lt55an06re3D-0',
     buttonText: 'Figma link →',
+    
     techIcons: [
       { src: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg', alt: 'Figma Logo', label: 'Figma' },
     ],
@@ -65,6 +69,7 @@ const projectData = [
     description: "Enhancing the UI/UX of Algeria's student portal for improved accessibility and usability. The redesign focused on creating a modern, intuitive interface that simplifies grade tracking, schedule management, and academic services.",
     buttonLink: 'https://www.figma.com/design/dtFJIsFD9ktKJuBg08XlF8/Untitled?node-id=1-4&t=tkK39qZabiGiRxG2-1',
     buttonText: 'Figma link →',
+    
     techIcons: [
       { src: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg', alt: 'Figma Logo', label: 'Figma' },
     ],
@@ -77,6 +82,7 @@ const projectData = [
     description: 'Developed a mobile recipe app using Flutter and SQLite, enabling users to browse and save over 50 recipes, implementing state management for smooth navigation.',
     buttonLink: 'https://drive.google.com/file/d/1U3WdxEE9ybhgYlJ302uFvOCK-LAsOWjT/view?usp=sharing',
     buttonText: 'Check Demo →',
+    githubLink: 'https://github.com/DjazzGh/RecipeApp_Flutter',
     techIcons: [
       { src: 'https://img.icons8.com/?size=100&id=7I3BjCqe9rjG&format=png&color=000000', alt: 'Flutter Logo', label: 'Flutter' },
     ],
@@ -89,6 +95,7 @@ const projectData = [
     description: 'This project is a console-based QCM Application that provides users with the ability to log in, choose qcm categories, answer questions with a timer, and track their qcm history.',
     buttonLink: 'https://www.youtube.com/watch?v=d8t6BRGSa6A&ab_channel=Chaima',
     buttonText: 'Check Demo →',
+    githubLink: 'https://github.com/DjazzGh/Python-QCM-Game',
     techIcons: [
       { src: 'https://img.icons8.com/?size=100&id=l75OEUJkPAk4&format=png&color=000000', alt: 'C++ Logo', label: 'C++' },
     ],
@@ -137,7 +144,11 @@ function Projects() {
             {projectData
               .filter((proj) => proj.category === cat.key)
               .map((proj, idx) => (
-                <ProjectCard key={proj.title + idx} {...proj} />
+                <ProjectCard
+                  key={proj.title + idx}
+                  {...proj}
+                  showGithubButton={proj.category !== 'UIUX'}
+                />
               ))}
                 </div>
         ))}

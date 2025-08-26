@@ -1,4 +1,5 @@
 import React from 'react';
+import GitHubButton from './GitHubButton';
 
 function ProjectCard({
   imageSrc,
@@ -6,19 +7,31 @@ function ProjectCard({
   title,
   description,
   buttonLink,
-  buttonText = 'Check Demo →',
-  techIcons = []
+  buttonText = 'Show Demo',
+  githubLink,
+  techIcons = [],
+  showGithubButton = true
 }) {
+  const handleImageClick = () => {
+    if (buttonLink) {
+      window.open(buttonLink, '_blank');
+    }
+  };
+
+  const isMobileApp = imageClass === 'project-img-mobile-placeholder';
+  
   return (
     <div className="project-card">
-      <img className={imageClass} src={imageSrc} alt={title} />
+      <div className={`image-container ${isMobileApp ? 'mobile-container' : ''}`} onClick={handleImageClick}>
+        <img className={imageClass} src={imageSrc} alt={title} />
+        {buttonLink && (
+          <div className="image-overlay">
+            <span className="demo-text">{buttonText}</span>
+          </div>
+        )}
+      </div>
       <h3>{title}</h3>
       <p>{description}</p>
-      {buttonLink && (
-        <button>
-          <a href={buttonLink} target="_blank" rel="noopener noreferrer">{buttonText}</a>
-        </button>
-      )}
       <div className="tech-icons">
         {techIcons.map((icon, idx) => (
           <span role="img" aria-label={icon.label || ''} key={idx}>
@@ -26,6 +39,10 @@ function ProjectCard({
           </span>
         ))}
       </div>
+      <div className="project-buttons">
+        {showGithubButton && <GitHubButton githubLink={githubLink} />}
+      </div>
+      
     </div>
   );
 }

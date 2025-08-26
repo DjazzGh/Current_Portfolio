@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import SocialLinks from './SocialLinks';
 import emailjs from '@emailjs/browser';
 
 function Contact() {
@@ -65,38 +66,11 @@ function Contact() {
                     className="contact-image"
                 />
                 <ul className="contact-list">
-                    <li>
-                        <span role="img" aria-label="Location">📍</span>
-                        <strong>Location: </strong>Algiers, Algeria
-                    </li>
-                    <li>
-                        <span role="img" aria-label="Email">✉️</span>
-                        <strong>Email: </strong>djaziaghomari24@gmail.com
-                    </li>
+                  
                     
-                    <li>
-                        <span role="img" aria-label="LinkedIn">💼</span>
-                        <a
-                            href="https://www.linkedin.com/in/djazia-ghomari-6994842b9/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            LinkedIn
-                        </a>
-                    </li>
-                    <li>
-                        <span role="img" aria-label="GitHub">💻</span>
-                        <a
-                            href="https://github.com/DjazzGh"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            GitHub
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <form className="contact-form" onSubmit={handleSubmit}>
+                    <SocialLinks />
+                    <li></li>
+<form className="contact-form" onSubmit={handleSubmit} style={{ paddingTop: '10px' }}>
                 <input
                     type="text"
                     className="contact-input"
@@ -109,6 +83,9 @@ function Contact() {
                     <span role="img" aria-label="Arrow">➣</span>
                 </button>
             </form>
+                </ul>
+            </div>
+           
         </section>
     );
 }
