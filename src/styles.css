@@ -1044,6 +1044,7 @@ body {
   .contact-image {
     width: 150px; /* Scale down image */
     height: 150px;
+    
   }
 
   .contact-list li {

@@ -86,11 +86,13 @@ const StyledWrapper = styled.div`
 
    @media (max-width: 400px) {
      .card {
-   max-width: 15rem;}
+   max-width: 15rem;
+   margin: 0 auto;}
     }
  @media (min-width: 400px) and (max-width: 768px) {
      .card {
-   max-width: 20rem;}
+   max-width: 20rem;
+   margin: 0 auto;}
     }
 
 
