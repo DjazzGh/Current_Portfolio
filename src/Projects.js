@@ -177,10 +177,9 @@ function Projects() {
     };
 
   const categories = [
-<<<<<<< HEAD
-=======
+
     { label: 'AI', value: 'AI' },
->>>>>>> aad16ac (added projects)
+
     { label: 'UI/UX', value: 'UIUX' },
     { label: 'Web Development', value: 'Web Development' },
     { label: 'Mobile Development', value: 'Mobile Development' },
