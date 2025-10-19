@@ -105,6 +105,23 @@ const projectData = [
       { src: 'https://img.icons8.com/?size=100&id=7I3BjCqe9rjG&format=png&color=000000', alt: 'Flutter Logo', label: 'Flutter' },
     ],
   },
+<<<<<<< HEAD
+=======
+    {
+    category: 'Mobile Development',
+    imageSrc: './card10.png',
+    imageClass: 'project-img-mobile-placeholder',
+    title: 'React Native Wallet',
+    description: 'A mobile wallet application built with React Native and Expo that allows users to manage their finances, track transactions, and monitor their balance.',
+    buttonLink: 'https://drive.google.com/file/d/1bV5ymKcjmM1jvFVYztmN26wBsSrBw_aQ/view?usp=sharing',
+    buttonText: 'Check Demo →',
+    githubLink: 'https://github.com/DjazzGh/React-Native-Wallet-mobile-frontend?tab=readme-ov-file',
+    techIcons: [
+        { src: 'https://runcode-app-public.s3.amazonaws.com/images/online-reactjs-editor-compiler.original.png', alt: 'ReactJS Logo', label: 'ReactJS' },
+      { src: 'https://www.svgrepo.com/show/373753/light-expo.svg', alt: 'Expo Logo', label: 'Flutter' },
+    ],
+  },
+>>>>>>> aad16ac (added projects)
   {
     category: 'Other languages',
     imageSrc: './card7.jpeg',
@@ -118,6 +135,23 @@ const projectData = [
       { src: 'https://img.icons8.com/?size=100&id=l75OEUJkPAk4&format=png&color=000000', alt: 'C++ Logo', label: 'C++' },
     ],
   },
+<<<<<<< HEAD
+=======
+  {
+    category: 'AI',
+    imageSrc: './card9.png',
+    imageClass: 'project-img-placeholder',
+    title: 'Fashion MNIST Classifier',
+    description: 'A deep learning application classifies Fashion MNIST clothing images with ~91% test accuracy using a CNN built with TensorFlow and Keras, featuring convolutional layers, dropout, and maxpooling. The 70,000 images were preprocessed with NumPy and PIL. A Streamlit web interface enables real-time predictions with Plotly visualizations for confidence scores. Deployed on Hugging Face for accessibility, with performance metrics.',
+    buttonLink: 'https://drive.google.com/file/d/1HKddRHyDgKauMb-6HGLnUNGKzReA2JS2/view?usp=sharing',
+    buttonText: 'Check Demo →',
+    githubLink: 'https://github.com/DjazzGh/Fashion-MNIST-Classifier',
+    techIcons: [
+      { src: 'https://img.icons8.com/?size=100&id=l75OEUJkPAk4&format=png&color=000000', alt: 'C++ Logo', label: 'C++' },
+      
+    ],
+  },
+>>>>>>> aad16ac (added projects)
 ];
 
 function Projects() {
@@ -145,6 +179,10 @@ function Projects() {
     };
 
   const categories = [
+<<<<<<< HEAD
+=======
+    { label: 'AI', value: 'AI' },
+>>>>>>> aad16ac (added projects)
     { label: 'UI/UX', value: 'UIUX' },
     { label: 'Web Development', value: 'Web Development' },
     { label: 'Mobile Development', value: 'Mobile Development' },
