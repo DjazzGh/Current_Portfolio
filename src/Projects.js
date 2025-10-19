@@ -105,8 +105,7 @@ const projectData = [
       { src: 'https://img.icons8.com/?size=100&id=7I3BjCqe9rjG&format=png&color=000000', alt: 'Flutter Logo', label: 'Flutter' },
     ],
   },
-<<<<<<< HEAD
-=======
+
     {
     category: 'Mobile Development',
     imageSrc: './card10.png',
@@ -121,7 +120,7 @@ const projectData = [
       { src: 'https://www.svgrepo.com/show/373753/light-expo.svg', alt: 'Expo Logo', label: 'Flutter' },
     ],
   },
->>>>>>> aad16ac (added projects)
+
   {
     category: 'Other languages',
     imageSrc: './card7.jpeg',
@@ -135,8 +134,7 @@ const projectData = [
       { src: 'https://img.icons8.com/?size=100&id=l75OEUJkPAk4&format=png&color=000000', alt: 'C++ Logo', label: 'C++' },
     ],
   },
-<<<<<<< HEAD
-=======
+
   {
     category: 'AI',
     imageSrc: './card9.png',
@@ -151,7 +149,7 @@ const projectData = [
       
     ],
   },
->>>>>>> aad16ac (added projects)
+
 ];
 
 function Projects() {
