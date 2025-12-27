@@ -13,7 +13,7 @@ const projectData = [
     buttonText: 'Check Demo →',
     githubLink: 'https://github.com/DjazzGh/Travel-planning-website',
     techIcons: [
-      { src: 'https://img.icons8.com/?size=100&id=asWSSTBrDlTW&format=png&color=000000', alt: 'React Logo', label: 'React' },
+      { src: 'https://img.icons8.com/?size=100&id=20909&format=png&color=000000', alt: 'HTML Logo', label: 'React' },
       { src: 'https://img.icons8.com/?size=100&id=21278&format=png&color=000000', alt: 'TypeScript Logo', label: 'TypeScript' },
       { src: 'https://img.icons8.com/?size=100&id=108784&format=png&color=000000', alt: 'Three.js Logo', label: 'Three.js' },
       { src: 'https://img.icons8.com/?size=100&id=UFXRpPFebwa2&format=png&color=000000', alt: 'Redux Logo', label: 'Redux' },
