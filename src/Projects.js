@@ -13,7 +13,7 @@ const projectData = [
     buttonText: 'Check Demo →',
     githubLink: 'https://github.com/DjazzGh/Travel-planning-website',
     techIcons: [
-      { src: 'https://img.icons8.com/?size=100&id=20909&format=png&color=000000', alt: 'React Logo', label: 'React' },
+      { src: 'https://img.icons8.com/?size=100&id=asWSSTBrDlTW&format=png&color=000000', alt: 'React Logo', label: 'React' },
       { src: 'https://img.icons8.com/?size=100&id=21278&format=png&color=000000', alt: 'TypeScript Logo', label: 'TypeScript' },
       { src: 'https://img.icons8.com/?size=100&id=108784&format=png&color=000000', alt: 'Three.js Logo', label: 'Three.js' },
       { src: 'https://img.icons8.com/?size=100&id=UFXRpPFebwa2&format=png&color=000000', alt: 'Redux Logo', label: 'Redux' },
@@ -30,7 +30,7 @@ const projectData = [
     buttonText: 'Check Demo →',
     githubLink: 'https://github.com/DjazzGh/Real-time-chat-app',
     techIcons: [
-      { src: 'https://runcode-app-public.s3.amazonaws.com/images/online-reactjs-editor-compiler.original.png', alt: 'ReactJS Logo', label: 'ReactJS' },
+      { src: 'https://img.icons8.com/?size=100&id=asWSSTBrDlTW&format=png&color=000000', alt: 'ReactJS Logo', label: 'ReactJS' },
       { src: 'https://img.icons8.com/?size=100&id=4PiNHtUJVbLs&format=png&color=000000', alt: 'Tailwind Logo', label: 'Tailwind' },
       { src: 'https://img.icons8.com/?size=100&id=54087&format=png&color=000000', alt: 'NodeJS Logo', label: 'NodeJS' },
       { src: 'https://img.icons8.com/?size=100&id=bosfpvRzNOG8&format=png&color=000000', alt: 'MongoDB Logo', label: 'MongoDB' },
@@ -116,7 +116,7 @@ const projectData = [
     buttonText: 'Check Demo →',
     githubLink: 'https://github.com/DjazzGh/React-Native-Wallet-mobile-frontend?tab=readme-ov-file',
     techIcons: [
-        { src: 'https://runcode-app-public.s3.amazonaws.com/images/online-reactjs-editor-compiler.original.png', alt: 'ReactJS Logo', label: 'ReactJS' },
+        { src: 'https://img.icons8.com/?size=100&id=asWSSTBrDlTW&format=png&color=000000', alt: 'ReactJS Logo', label: 'ReactJS' },
       { src: 'https://www.svgrepo.com/show/373753/light-expo.svg', alt: 'Expo Logo', label: 'Flutter' },
     ],
   },
