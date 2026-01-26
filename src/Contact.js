@@ -23,9 +23,11 @@ function Contact() {
             observer.observe(sectionRef.current);
         }
 
+        const currentRef = sectionRef.current; // Capture the current ref value
+
         return () => {
-            if (sectionRef.current) {
-                observer.unobserve(sectionRef.current);
+            if (currentRef) { // Use the captured ref value
+                observer.unobserve(currentRef);
             }
         };
     }, []);
