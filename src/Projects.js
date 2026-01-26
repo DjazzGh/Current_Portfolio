@@ -9,7 +9,7 @@ const projectData = [
     imageClass: 'project-img-placeholder',
     title: 'Travel planning website',
     description: 'Developed a dynamic travel planning website that allows users to create personalized travel itineraries by inputting details . Designed an intuitive user interface to enhance user experience and implemented robust backend functionality to store and manage user-generated travel plans efficiently.',
-    buttonLink: 'https://drive.google.com/file/d/1VHwEfO7pJmCgP32RBunJhnId59jfu1io/view?usp=sharing',
+    buttonLink: 'https://drive.google.com/file/d/1zGbsRBfmGHUlLPQQ1ZVspKm98uGdZeQm/view?usp=share_link',
     buttonText: 'Check Demo →',
     githubLink: 'https://github.com/DjazzGh/Travel-planning-website',
     techIcons: [
@@ -26,7 +26,7 @@ const projectData = [
     imageClass: 'project-img-placeholder',
     title: 'Real Time Chat App',
     description: 'A real-time chat application that enables users to exchange instant messages and monitor online statuses through a seamless, responsive interface. It incorporates secure user authentication, ensures reliable conversation flow, and implements comprehensive error handling on both client and server sides.',
-    buttonLink: 'https://drive.google.com/file/d/1idylEldU17gS_Z220VQiVElw0L5MPkDO/view?usp=sharing',
+    buttonLink: 'https://drive.google.com/file/d/10ORFrWInujnT2ujBJVkKsVp4shRKj2xN/view?usp=sharing',
     buttonText: 'Check Demo →',
     githubLink: 'https://github.com/DjazzGh/Real-time-chat-app',
     techIcons: [
@@ -42,7 +42,7 @@ const projectData = [
     imageClass: 'project-img-placeholder',
     title: 'SmartSpendAI - Expense Tracker AI',
     description: 'An expense tracker that leverages artificial intelligence to help users manage their finances effectively. It provides AI-powered insights into spending patterns, automates expense categorization, and offers a smart dashboard for visualizing financial data, empowering users to achieve their financial goals with ease.',
-    buttonLink: 'https://drive.google.com/file/d/1bS_Iyb3H0IMkx1hTK-cp5Cg6yPOTnm4p/view',
+    buttonLink: 'https://drive.google.com/file/d/1yhu5AIC1xlKfqWd109UN6wzEaxrVRjGc/view?usp=sharing',
     buttonText: 'Check Demo →',
     githubLink: 'https://github.com/DjazzGh/AI_Expense_Tracker_Website',
     techIcons: [
@@ -59,7 +59,7 @@ const projectData = [
     imageClass: 'project-img-placeholder',
     title: 'Hotel Management App',
     description: 'Developed a hotel management system that processes 200+ bookings per month, applying Java OOP principles, MVC architecture, and designing an intuitive GUI.',
-    buttonLink: 'https://drive.google.com/file/d/1eRXpY78DySlUhs1LJYksW4Jl7lClurW3/view?usp=sharing',
+    buttonLink: 'https://drive.google.com/file/d/1jOo5MWBXNRS0rhdJEEawn4mWmThNdw7O/view?usp=share_link',
     buttonText: 'Check Demo →',
     githubLink: 'https://github.com/DjazzGh/Hotel_Management_App',
     techIcons: [
@@ -98,7 +98,7 @@ const projectData = [
     imageClass: 'project-img-mobile-placeholder',
     title: 'Recipe App',
     description: 'Developed a mobile recipe app using Flutter and SQLite, enabling users to browse and save over 50 recipes, implementing state management for smooth navigation.',
-    buttonLink: 'https://drive.google.com/file/d/1U3WdxEE9ybhgYlJ302uFvOCK-LAsOWjT/view?usp=sharing',
+    buttonLink: 'https://drive.google.com/file/d/1M6hBA0Hpd2N6RYxLtLINT8BjkIKgWW-r/view?usp=share_link',
     buttonText: 'Check Demo →',
     githubLink: 'https://github.com/DjazzGh/RecipeApp_Flutter',
     techIcons: [
@@ -112,7 +112,7 @@ const projectData = [
     imageClass: 'project-img-mobile-placeholder',
     title: 'React Native Wallet',
     description: 'A mobile wallet application built with React Native and Expo that allows users to manage their finances, track transactions, and monitor their balance.',
-    buttonLink: 'https://drive.google.com/file/d/1bV5ymKcjmM1jvFVYztmN26wBsSrBw_aQ/view?usp=sharing',
+    buttonLink: 'https://drive.google.com/file/d/1o-PBEOJmYXd5_C9MhG5p6bOFhFZJJl4t/view?usp=sharing',
     buttonText: 'Check Demo →',
     githubLink: 'https://github.com/DjazzGh/React-Native-Wallet-mobile-frontend?tab=readme-ov-file',
     techIcons: [
