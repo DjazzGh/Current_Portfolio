@@ -37,8 +37,6 @@ function ProjectCard({
     }
   };
 
-  const isMobileApp = imageClass === 'project-img-mobile-placeholder';
-
   return (
     <StyledWrapper isLightMode={isLightMode}>
       <div className="card">

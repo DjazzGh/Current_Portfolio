@@ -1,6 +1,19 @@
 'use client';
 import { useEffect, useRef } from 'react';
 
+// Define Particle class outside component to avoid dependency issues
+class Particle {
+  position;
+  image;
+  constructor(x, y, image) {
+    this.position = { x, y };
+    this.image = image;
+  }
+  move(context) {
+    context.drawImage(this.image, this.position.x, this.position.y);
+  }
+}
+
 const TrailingCursor = ({
   element,
   particles = 15,
@@ -13,23 +26,11 @@ const TrailingCursor = ({
   const animationFrameRef = useRef();
   const cursorsInittedRef = useRef(false);
 
-  class Particle {
-    position;
-    image;
-    constructor(x, y, image) {
-      this.position = { x, y };
-      this.image = image;
-    }
-    move(context) {
-      context.drawImage(this.image, this.position.x, this.position.y);
-    }
-  }
-
   useEffect(() => {
     // Check if device is mobile/touch-enabled
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    
+
     // Exit early if mobile or touch device
     if (isMobile || isTouchDevice) {
       return;

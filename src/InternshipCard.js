@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const InternshipCard = () => {
+const InternshipCard = ({ title, company, date, description }) => {
   const [isLightMode, setIsLightMode] = useState(false);
-  
+
   // Check for light mode and update state when it changes
   useEffect(() => {
     // Initial check
     setIsLightMode(document.documentElement.classList.contains('light-mode'));
-    
+
     // Set up observer to watch for class changes on html element
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
@@ -17,30 +17,29 @@ const InternshipCard = () => {
         }
       });
     });
-    
+
     observer.observe(document.documentElement, { attributes: true });
-    
+
     // Clean up observer on component unmount
     return () => observer.disconnect();
   }, []);
-  
+
   // Custom inline styles for light mode
   const notificationStyle = isLightMode ? { background: '#ffffff' } : {};
-  const innerBackgroundStyle = isLightMode ? { background: '#ffffff' } : {};
   const titleStyle = isLightMode ? { color: '#0A0082', fontWeight: 600 } : {};
   const bodyStyle = isLightMode ? { color: '#555555' } : {};
   const descriptionStyle = isLightMode ? { color: '#444444' } : {};
 
   return (
     <StyledWrapper>
-      <div 
-        className="notification" 
+      <div
+        className="notification"
         style={notificationStyle}
       >
         <div className="notiglow" />
         <div className="notiborderglow" />
-        <div 
-          className="inner-background" 
+        <div
+          className="inner-background"
           style={{
             position: 'absolute',
             content: '""',
@@ -50,20 +49,21 @@ const InternshipCard = () => {
             zIndex: 2
           }}
         />
-        <div 
+        <div
           className="notititle"
           style={titleStyle}
-        >UI/UX Design Internship</div>
-        <div 
+        >{title}</div>
+        <div
           className="notibody"
           style={bodyStyle}
-        >The Virtual CTO | May 2025 - July 2025</div>
-        <div 
+        >{company} | {date}</div>
+        <div
           className="notidescription"
           style={descriptionStyle}
-        >Created user-friendly websites based on project requirements. I conducted user research, built personas, and designed responsive wireframes. Refined layouts for intuitive navigation and visual appeal, incorporating features like dashboards and event management to enhance the user experience.</div>
+        >{description}</div>
       </div>
     </StyledWrapper>
+    
   );
 }
 
