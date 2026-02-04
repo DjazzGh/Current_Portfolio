@@ -1113,6 +1113,12 @@ body {
 html, body {
   overflow-x: hidden;
   overscroll-behavior: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+
 }
 
 .projects,
