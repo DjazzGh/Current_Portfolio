@@ -61,11 +61,9 @@ function AboutMe() {
                   <div className="card-content">
                     <h3> 👩🏻‍💻 Fields of Interest</h3>
                     <ul>
-                      <li>Web Development</li>
-                      <li>UI UX Design</li>
+                      <li>Full Stack Development</li>
                       <li>Cybersecurity</li>
                       <li>AI</li>
-                      <li>Mobile Development</li>
                     </ul>
                   </div>
                 </div>

@@ -36,7 +36,7 @@ const projectData = [
       { src: 'https://img.icons8.com/?size=100&id=bosfpvRzNOG8&format=png&color=000000', alt: 'MongoDB Logo', label: 'MongoDB' },
     ],
   },
-    {
+  {
     category: 'Web Development',
     imageSrc: './card8.png',
     imageClass: 'project-img-placeholder',
@@ -51,8 +51,9 @@ const projectData = [
       { src: 'https://img.icons8.com/?size=100&id=4PiNHtUJVbLs&format=png&color=000000', alt: 'Tailwind Logo', label: 'Tailwind' },
       { src: "https://img.icons8.com/color/48/postgreesql.png", alt: 'Postgres Logo', label: 'Postgres' },
 
-      
-    ]}, 
+
+    ]
+  },
   {
     category: 'Other languages',
     imageSrc: './card3.jpeg',
@@ -74,7 +75,7 @@ const projectData = [
     description: 'A medical platform focused on enhancing healthcare accessibility and efficiency. It provides intuitive UI/UX designs for seamless appointment scheduling, and medical record management. A smooth and reliable experience for both patients and healthcare professionals.',
     buttonLink: 'https://www.figma.com/design/0NWi4CR09F3swEo0SpP5th/Challenge-3?t=SYV0lt55an06re3D-0',
     buttonText: 'Figma link →',
-    
+
     techIcons: [
       { src: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg', alt: 'Figma Logo', label: 'Figma' },
     ],
@@ -87,7 +88,7 @@ const projectData = [
     description: "Enhancing the UI/UX of Algeria's student portal for improved accessibility and usability. The redesign focused on creating a modern, intuitive interface that simplifies grade tracking, schedule management, and academic services.",
     buttonLink: 'https://www.figma.com/design/dtFJIsFD9ktKJuBg08XlF8/Untitled?node-id=1-4&t=tkK39qZabiGiRxG2-1',
     buttonText: 'Figma link →',
-    
+
     techIcons: [
       { src: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg', alt: 'Figma Logo', label: 'Figma' },
     ],
@@ -106,7 +107,7 @@ const projectData = [
     ],
   },
 
-    {
+  {
     category: 'Mobile Development',
     imageSrc: './card10.png',
     imageClass: 'project-img-mobile-placeholder',
@@ -116,7 +117,7 @@ const projectData = [
     buttonText: 'Check Demo →',
     githubLink: 'https://github.com/DjazzGh/React-Native-Wallet-mobile-frontend?tab=readme-ov-file',
     techIcons: [
-        { src: 'https://img.icons8.com/?size=100&id=asWSSTBrDlTW&format=png&color=000000', alt: 'ReactJS Logo', label: 'ReactJS' },
+      { src: 'https://img.icons8.com/?size=100&id=asWSSTBrDlTW&format=png&color=000000', alt: 'ReactJS Logo', label: 'ReactJS' },
       { src: 'https://www.svgrepo.com/show/373753/light-expo.svg', alt: 'Expo Logo', label: 'Flutter' },
     ],
   },
@@ -146,60 +147,58 @@ const projectData = [
     githubLink: 'https://github.com/DjazzGh/Fashion-MNIST-Classifier',
     techIcons: [
       { src: 'https://img.icons8.com/?size=100&id=l75OEUJkPAk4&format=png&color=000000', alt: 'C++ Logo', label: 'C++' },
-      
+
     ],
   },
 
 ];
 
 function Projects() {
-    const [activeFilter, setActiveFilter] = useState('Web Development');
-    const [isLightMode, setIsLightMode] = useState(false);
+  const [activeFilter, setActiveFilter] = useState('Web Development');
+  const [isLightMode, setIsLightMode] = useState(false);
 
-    useEffect(() => {
-        setIsLightMode(document.documentElement.classList.contains('light-mode'));
+  useEffect(() => {
+    setIsLightMode(document.documentElement.classList.contains('light-mode'));
 
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.attributeName === 'class') {
-                    setIsLightMode(document.documentElement.classList.contains('light-mode'));
-                }
-            });
-        });
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class') {
+          setIsLightMode(document.documentElement.classList.contains('light-mode'));
+        }
+      });
+    });
 
-        observer.observe(document.documentElement, { attributes: true });
+    observer.observe(document.documentElement, { attributes: true });
 
-        return () => observer.disconnect();
-    }, []);
+    return () => observer.disconnect();
+  }, []);
 
-    const handleFilterClick = (filter) => {
-        setActiveFilter(filter);
-    };
+  const handleFilterClick = (filter) => {
+    setActiveFilter(filter);
+  };
 
   const categories = [
 
-    { label: 'AI', value: 'AI' },
-
-    { label: 'UI/UX', value: 'UIUX' },
     { label: 'Web Development', value: 'Web Development' },
     { label: 'Mobile Development', value: 'Mobile Development' },
-    { label: 'Other languages', value: 'Other languages' },
+
+    { label: 'AI', value: 'AI' },
   ];
 
-    return (
-        <section className="projects" id="projects">
-            <h2 style={{ marginBottom: '20px' }}>My Projects</h2>
-            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
-              <CustomRadioButtons
-                categories={categories}
-                activeFilter={activeFilter}
-                handleFilterClick={handleFilterClick}
-                categoriesCount={categories.length}
-                activeIndex={categories.findIndex(cat => cat.value === activeFilter)}
-                isLightMode={isLightMode}
-              />
-            </div>
-            <div className="project-card-container" style={{ gap: '1.5rem' }}>
+  return (
+    <section className="projects" id="projects">
+      <h2 style={{ marginBottom: '20px' }}>My Projects</h2>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
+        <CustomRadioButtons
+          categories={categories}
+          activeFilter={activeFilter}
+          handleFilterClick={handleFilterClick}
+          categoriesCount={categories.length}
+          activeIndex={categories.findIndex(cat => cat.value === activeFilter)}
+          isLightMode={isLightMode}
+        />
+      </div>
+      <div className="project-card-container" style={{ gap: '1.5rem' }}>
         {categories.map((cat) => (
           <div
             key={cat.value}
@@ -221,11 +220,11 @@ function Projects() {
                   showGithubButton={proj.category !== 'UIUX'}
                 />
               ))}
-                </div>
+          </div>
         ))}
-            </div>
-        </section>
-    );
+      </div>
+    </section>
+  );
 }
 
 export default Projects;
