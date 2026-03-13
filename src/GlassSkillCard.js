@@ -9,15 +9,15 @@ const GlassSkillCard = ({ title, icon, rotation, skills }) => {
     const checkMode = () => {
       setIsLightMode(document.documentElement.classList.contains('light-mode'));
     };
-    
+
     checkMode();
-    
+
     const observer = new MutationObserver(checkMode);
     observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ['class']
     });
-    
+
     return () => observer.disconnect();
   }, []);
 
@@ -30,7 +30,7 @@ const GlassSkillCard = ({ title, icon, rotation, skills }) => {
   };
 
   const cardStyle = {
-    background: isLightMode ? '#f0f0f0' : 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
+    background: isLightMode ? '#ffffff' : 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
   };
 
   const titleStyle = {
@@ -44,11 +44,11 @@ const GlassSkillCard = ({ title, icon, rotation, skills }) => {
 
   return (
     <StyledWrapper>
-      <div 
+      <div
         style={{
           '--r': rotation,
           ...cardStyle
-        }} 
+        }}
         className={`glass ${isFlipped ? 'flipped' : ''}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -74,7 +74,7 @@ const GlassSkillCard = ({ title, icon, rotation, skills }) => {
               ))}
             </div>
           </div>
-      </div>
+        </div>
       </div>
     </StyledWrapper>
   );
@@ -99,15 +99,15 @@ const StyledWrapper = styled.div`
 
   /* Light mode styles - using body selector */
   body.light-mode .glass {
-    background: #f0f0f0 !important; /* Light grey background */
+    background: #ffffff !important; /* White background */
   }
   
   .light-mode .glass {
-    background: #f0f0f0 !important; /* Light grey background */
+    background: #ffffff !important; /* White background */
   }
   
   html.light-mode .glass {
-    background: #f0f0f0 !important; /* Light grey background */
+    background: #ffffff !important; /* White background */
   }
 
   .card-inner {
@@ -166,7 +166,7 @@ const StyledWrapper = styled.div`
     justify-content: center;
     align-items: center;
     color: #fff;
-    font-weight: 600;
+    font-weight: 800;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -199,8 +199,8 @@ const StyledWrapper = styled.div`
   }
 
   .card-front img {
-    width: 40px;
-    height: 40px;
+    width: 40px !important;
+    height: 40px !important;
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
     transition: transform 0.3s ease;
   }
@@ -260,8 +260,9 @@ const StyledWrapper = styled.div`
   }
 
   .skill-icon img {
-    width: 18px;
-    height: 18px;
+    width: 18px !important;
+    height: 18px !important;
+    object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
   }
 

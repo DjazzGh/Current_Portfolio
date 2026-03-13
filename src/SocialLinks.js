@@ -1,95 +1,182 @@
 import React from 'react'; 
  import styled from 'styled-components'; 
  
- const SocialLinks = () => { 
+ const Tooltip = () => { 
    return ( 
      <StyledWrapper> 
-       <div className="social-links"> 
-         <div id="email" className="social-btn flex-center"> 
-           <svg viewBox="0 0 24 24" height={24} width={24} xmlns="http://www.w3.org/2000/svg"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.72v15.433h24v-15.433l-12 9.72z" /></svg><span>djaziaghomari24@gmail.com</span> 
-         </div> 
-         <a href="https://www.linkedin.com/in/djazia-ghomari-6994842b9/" target="_blank" rel="noopener noreferrer">
-           <div id="linkedin" className="social-btn flex-center"> 
-             <svg viewBox="0 0 24 24" height={24} width={24} xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" /></svg><span>Djazia Ghomari</span> 
-           </div> 
-         </a> 
-         <a href="https://github.com/DjazzGh" target="_blank" rel="noopener noreferrer">
-           <div id="github" className="social-btn flex-center"> 
-             <svg viewBox="0 0 24 24" height={24} width={24} xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg><span>DjazzGh</span> 
-           </div> 
-         </a> 
-       </div> 
+       <ul className="example-2"> 
+         <li className="icon-content"> 
+           <a data-social="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/djazia-ghomari-6994842b9/"> 
+             <div className="filled" /> 
+             <svg xmlSpace="preserve" viewBox="0 0 16 16" className="bi bi-linkedin" fill="currentColor" height={16} width={16} xmlns="http://www.w3.org/2000/svg"> 
+               <path fill="currentColor" d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" /> 
+             </svg> 
+           </a> 
+           <div className="tooltip">Djazia Ghomari</div> 
+         </li> 
+         <li className="icon-content"> 
+           <a data-social="github" aria-label="GitHub" href="https://github.com/DjazzGh"> 
+             <div className="filled" /> 
+             <svg xmlSpace="preserve" viewBox="0 0 16 16" className="bi bi-github" fill="currentColor" height={16} width={16} xmlns="http://www.w3.org/2000/svg"> 
+               <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" /> 
+             </svg> 
+           </a> 
+           <div className="tooltip">Djazz Gh</div> 
+         </li> 
+         
+       <li className="icon-content"> 
+  <a data-social="youtube" aria-label="Gmail" href="mailto:djaziaghomari24@gmail.com"> 
+    <div className="filled" /> 
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      fill="currentColor"
+      width={16}
+      height={16}
+      className="bi bi-envelope-fill"
+    >
+      <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555z"/>
+      <path d="M0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83 0 12.803A2 2 0 0 0 2 14h12a2 2 0 0 0 2-1.197L9.239 8.83 8 9.586 6.761 8.83zM16 4.697l-5.803 3.546L16 11.801V4.697z"/>
+    </svg> 
+  </a> 
+  <div className="tooltip">djaziaghomari24@gmail.com</div> 
+</li>
+       </ul> 
      </StyledWrapper> 
    ); 
  } 
  
  const StyledWrapper = styled.div` 
-   .social-links,.flex-center { 
+   ul { 
+     list-style: none; 
+   } 
+ 
+   .example-2 { 
      display: flex; 
      justify-content: center; 
      align-items: center; 
+     flex-direction: column; 
+     row-gap: 0.5rem; 
    } 
- 
-   .social-btn { 
-     cursor: pointer; 
-     height: 50px; 
-     width: 50px; 
-     font-family: 'Titillium Web', sans-serif; 
-     color: #333; 
-     border-radius: 10px; 
-     box-shadow: 0px 10px 10px rgba(0,0,0,0.1); 
-     background: white; 
-     margin: 5px; 
-     transition: 0.3s; 
-     justify-content: center; 
+   .example-2 .icon-content { 
+     margin: 0 10px; 
+     position: relative; 
    } 
- 
-   .social-btn svg { 
-     height: 24px; 
-     width: 24px; 
+   .example-2 .icon-content .tooltip { 
+     position: absolute; 
+     top: 50%; 
+     left: 25px; 
+     transform: translateY(-50%); 
+     color: #fff; 
+     padding: 6px 10px; 
+     border-radius: 5px; 
+     opacity: 0; 
+     visibility: hidden; 
+     font-size: 14px; 
+     transition: all 0.3s ease; 
    } 
- 
-   .social-btn span { 
-     width: 0px; 
+   .example-2 .icon-content:hover .tooltip { 
+     opacity: 1; 
+     visibility: visible; 
+     left: 60px; 
+   } 
+   .example-2 .icon-content a { 
+     position: relative; 
      overflow: hidden; 
-     transition: 0.3s; 
-     text-align: center; 
-     margin-left: 5px; 
+     display: flex; 
+     justify-content: center; 
+     align-items: center; 
+     width: 50px; 
+     height: 50px; 
+     border-radius: 50%; 
+     color: #4d4d4d; 
+     background-color: #fff; 
+     transition: all 0.3s ease-in-out; 
+   } 
+   .example-2 .icon-content a:hover { 
+     box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%); 
+   } 
+   .example-2 .icon-content a svg { 
+     position: relative; 
+     z-index: 1; 
+     width: 30px; 
+     height: 30px; 
+   } 
+   .example-2 .icon-content a:hover { 
+     color: white; 
+   } 
+   .example-2 .icon-content a .filled { 
+     position: absolute; 
+     top: auto; 
+     bottom: 0; 
+     left: 0; 
+     width: 100%; 
+     height: 0; 
+     background-color: #000; 
+     transition: all 0.3s ease-in-out; 
+   } 
+   .example-2 .icon-content a:hover .filled { 
+     height: 100%; 
    } 
  
-   .social-btn:hover {
-     width: 150px;
-     border-radius: 5px;
+   .example-2 .icon-content a[data-social="linkedin"] .filled, 
+   .example-2 .icon-content a[data-social="linkedin"] ~ .tooltip { 
+     background-color: #0274b3; 
+   } 
+ 
+   .example-2 .icon-content a[data-social="github"] .filled, 
+   .example-2 .icon-content a[data-social="github"] ~ .tooltip { 
+     background-color: #24262a; 
+   } 
+   .example-2 .icon-content a[data-social="instagram"] .filled, 
+   .example-2 .icon-content a[data-social="instagram"] ~ .tooltip { 
+     background: linear-gradient( 
+       45deg, 
+       #405de6, 
+       #5b51db, 
+       #b33ab4, 
+       #c135b4, 
+       #e1306c, 
+       #fd1f1f 
+     ); 
+   } 
+   .example-2 .icon-content a[data-social="youtube"] .filled, 
+   .example-2 .icon-content a[data-social="youtube"] ~ .tooltip { 
+     background-color: #ff0000; 
    }
 
-   #email.social-btn:hover {
-     width: 225px; /* Adjust as needed to fit the email text */
-     justify-content: flex-start;
-     gap: 5px; /* Add gap between icon and text */
-   } 
- 
-   .social-btn:hover span {
-     padding: 5px;
-     width: 80px;
-     font-size: 14px;
-   }
+   @media (max-width: 768px) {
+    .example-2 {
+      flex-direction: row;
+    }
 
-   #email.social-btn:hover span {
-     margin-left: 0;
-     width: 190px; /* Adjusted width to fit the email text */
-     padding-left: 5px; /* Adjust padding to ensure text fits */
-   } 
+    .example-2 .icon-content .tooltip {
+      top: 55px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .example-2 .icon-content:hover .tooltip {
+      top: 65px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .example-2 .icon-content a[data-social="linkedin"] {
+      background-color: #0274b3;
+      color: white;
+    }
+
+    .example-2 .icon-content a[data-social="github"] {
+      background-color: #24262a;
+      color: white;
+    }
+
+    .example-2 .icon-content a[data-social="youtube"] {
+      background-color: #ff0000;
+      color: white;
+    }
+  }
+`; 
  
-   #email svg { 
-     fill: #EA4335; /* Google red */ 
-   } 
- 
-   #linkedin svg { 
-     fill: #0e76a8; 
-   } 
- 
-   #github { 
-     fill: #333; 
-   }`; 
- 
- export default SocialLinks;
+ export default Tooltip;

@@ -63,7 +63,7 @@ const InternshipCard = ({ title, company, date, description }) => {
         >{description}</div>
       </div>
     </StyledWrapper>
-    
+
   );
 }
 
@@ -88,7 +88,7 @@ const StyledWrapper = styled.div`
 
   /* Light mode styles */
   html.light-mode .notification {
-    background: #f0f0f0 !important;
+    background: #ffffff !important;
   }
 
   .notification:before {
@@ -102,7 +102,7 @@ const StyledWrapper = styled.div`
 
   /* Light mode inner background */
   html.light-mode .notification:before {
-    background: #f5f5f5 !important;
+    background: #ffffff !important;
   }
 
   .notification:after {

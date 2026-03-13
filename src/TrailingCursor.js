@@ -27,14 +27,11 @@ const TrailingCursor = ({
   const cursorsInittedRef = useRef(false);
 
   useEffect(() => {
-    // Check if device is mobile/touch-enabled
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-    // Exit early if mobile or touch device
-    if (isMobile || isTouchDevice) {
-      return;
-    }
+        if (isTouchDevice) {
+            return;
+        }
 
     const baseImage = new Image();
     baseImage.src = baseImageSrc;
@@ -50,6 +47,7 @@ const TrailingCursor = ({
     canvas.style.top = '0px';
     canvas.style.left = '0px';
     canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '9999'; // Set a high z-index
     if (hasWrapperEl) {
       canvas.style.position = 'absolute';
       targetElement.appendChild(canvas);

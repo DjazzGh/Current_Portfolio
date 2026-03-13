@@ -39,22 +39,22 @@ function Contact() {
     const handleSubmit = (e) => {
         e.preventDefault();
         emailjs.send(
-            "service_fh818rm",      
-            "template_2co5fae",    
+            "service_fh818rm",
+            "template_2co5fae",
             {
                 message: message,
                 to_email: "djazia.gh77@gmail.com",
             }
         )
-        .then((response) => {
-            console.log("Email sent successfully!", response);
-            setMessage(""); // Clear input after sending
-            alert("Message sent successfully!");
-        })
-        .catch((error) => {
-            console.error("Error sending email:", error);
-            alert("Failed to send message. Please try again.");
-        });
+            .then((response) => {
+                console.log("Email sent successfully!", response);
+                setMessage(""); // Clear input after sending
+                alert("Message sent successfully!");
+            })
+            .catch((error) => {
+                console.error("Error sending email:", error);
+                alert("Failed to send message. Please try again.");
+            });
     };
 
     return (
@@ -67,27 +67,12 @@ function Contact() {
                     alt="Profile"
                     className="contact-image"
                 />
-                <ul className="contact-list">
-                  
-                    
+                <div className="contact-info contact-list">
                     <SocialLinks />
-                    <li></li>
-<form className="contact-form" onSubmit={handleSubmit} style={{ paddingTop: '10px' }}>
-                <input
-                    type="text"
-                    className="contact-input"
-                    placeholder="Send me a message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    required
-                />
-                <button type="submit" className="contact-button">
-                    <span role="img" aria-label="Arrow">➣</span>
-                </button>
-            </form>
-                </ul>
+
+                </div>
             </div>
-           
+
         </section>
     );
 }

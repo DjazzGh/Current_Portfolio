@@ -154,7 +154,7 @@ const StyledWrapper = styled.div`
   .text .h3 {
     font-family: 'Noto Serif', serif;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 800;
     color: ${props => props.isLightMode ? 'black' : 'white'};
     margin-bottom: 5px;
   }
@@ -176,6 +176,12 @@ const StyledWrapper = styled.div`
   .tech-icons span {
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
+  }
+
+  .tech-icons img {
+    height: 30px !important;
+    width: auto !important;
+    object-fit: contain;
   }
 
   .project-buttons {

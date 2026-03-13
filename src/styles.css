@@ -1,22 +1,30 @@
-
 :root {
   --primary-purple: #4b0082;
   --accent-blue: #3795BD;
-  --background: #000000;    /* Default dark mode */
-  --text: #ffffff;         /* Default dark mode */
+  --background: #000000;
+  /* Default dark mode */
+  --text: #ffffff;
+  /* Default dark mode */
   --white: #ffffff;
   --black: #000000;
-  --experience-title: #3795BD; /* blue for dark mode */
-  --experience-dot-bg: #4b0082; /* purple for dark mode */
+  --experience-title: #3795BD;
+  /* blue for dark mode */
+  --experience-dot-bg: #4b0082;
+  /* purple for dark mode */
 }
 
 .light-mode {
-  --background: #e1dfdf;    /* Light mode background */
-  --text: #000000; /* Light mode text */
+  --background: #dfdedc;
+  /* Light mode background */
+  --text: #000000;
+  /* Light mode text */
   --primary-purple: #0A0082;
-  --accent-blue: #3795BD;;
-  --experience-title: #4b0082; /* purple for light mode */
-  --experience-dot-bg: #3795BD; /* blue for light mode */
+  --accent-blue: #3795BD;
+  ;
+  --experience-title: #4b0082;
+  /* purple for light mode */
+  --experience-dot-bg: #3795BD;
+  /* blue for light mode */
 }
 
 
@@ -25,6 +33,7 @@
   background-color: var(--background);
   font-family: 'Noto Serif';
 }
+
 .header {
   background-color: var(--primary-purple);
   padding-bottom: 0px;
@@ -59,12 +68,16 @@
 }
 
 .hero h1,
-.hero p,
 .about-me h2,
-.about-me p,
 .skills h2,
 .projects h2,
 .contact h2 {
+  color: var(--text);
+  font-weight: 800;
+}
+
+.hero p,
+.about-me p {
   color: var(--text);
 }
 
@@ -73,12 +86,17 @@ header {
   margin-bottom: 60px;
   font-family: 'Poppins';
 }
+
 section {
-  margin-bottom: 200px; /* Large space between each component */
+  margin-bottom: 200px;
+  /* Large space between each component */
 }
-header li{
-font-family: 'Noto Serif';
-font-weight: bold;}
+
+header li {
+  font-family: 'Noto Serif';
+  font-weight: bold;
+}
+
 /* Ensure the first component (Header) doesn't add extra space at the top */
 header:first-child {
   margin-top: 0;
@@ -119,16 +137,21 @@ section:last-child {
 
 @media (max-width: 480px) {
   .nav-list {
-  list-style: none;
-  display: flex;
-  gap: 40px;
-  color: #ffffff;
-  margin-left: 0;
-}
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    color: #ffffff;
+    margin-left: 0;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-.nav-list li:hover{
-  
+.nav-list li:hover {
+
   color: var(--accent-blue);
 }
 
@@ -142,12 +165,14 @@ section:last-child {
   width: 30px;
   height: 30px;
   padding-right: 10px;
-  transition: transform 0.2s ease; /* Smooth transition */
+  transition: transform 0.2s ease;
+  /* Smooth transition */
 }
 
 .theme-toggle img:hover {
   cursor: pointer;
-  transform: scale(1.33); /* Increases size by ~33% (30px -> ~40px) */
+  transform: scale(1.33);
+  /* Increases size by ~33% (30px -> ~40px) */
 }
 
 /* Hero Styles */
@@ -167,15 +192,18 @@ section:last-child {
   align-items: center;
   justify-content: center;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  position: relative; /* Added for better control over child positioning */
+  position: relative;
+  /* Added for better control over child positioning */
 }
 
 .profile-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center; /* Explicitly centers the image */
-  display: block; /* Removes any default inline spacing */
+  object-position: center;
+  /* Explicitly centers the image */
+  display: block;
+  /* Removes any default inline spacing */
 }
 
 .profile-img {
@@ -215,7 +243,8 @@ section:last-child {
   cursor: pointer;
   margin-right: 10px;
 }
-.btn-primary:hover{
+
+.btn-primary:hover {
   background-color: var(--accent-blue);
 
 }
@@ -229,31 +258,52 @@ section:last-child {
   border: none;
   cursor: pointer;
 }
-.btn-secondary:hover{
+
+.btn-secondary:hover {
   color: var(--accent-blue);
   background-color: #ffffff;
 }
+
 .typewriter {
-  overflow: hidden; /* Ensures the text stays within bounds */
-  border-right: 0.15em solid orange; /* Creates the cursor effect */
-  white-space: nowrap; /* Keeps text on a single line */
-  margin: 0 auto; /* Centers the text */
-  letter-spacing: 0.10em; /* Adds spacing between letters */
-  animation: 
-    typing 3.5s steps(40, end), /* Typing effect */
-    blink-caret 0.75s step-end infinite; /* Blinking cursor */
+  overflow: hidden;
+  /* Ensures the text stays within bounds */
+  border-right: 0.15em solid orange;
+  /* Creates the cursor effect */
+  white-space: nowrap;
+  /* Keeps text on a single line */
+  margin: 0 auto;
+  /* Centers the text */
+  letter-spacing: 0.10em;
+  /* Adds spacing between letters */
+  animation:
+    typing 3.5s steps(40, end),
+    /* Typing effect */
+    blink-caret 0.75s step-end infinite;
+  /* Blinking cursor */
 }
 
 /* The typing animation */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
 }
 
 /* The cursor blinking animation */
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange }
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: orange
+  }
 }
 
 
@@ -272,13 +322,15 @@ section:last-child {
   font-size: 30px;
   margin-bottom: 0px;
 }
-#littletext{
+
+#littletext {
   color: var(--accent-blue);
 }
+
 .about-me p {
   color: #ffffff;
   font-size: 18px;
-  
+
   margin: 0;
 }
 
@@ -316,7 +368,8 @@ section:last-child {
   text-align: center;
   height: 100%;
 }
-.card-content > *:first-child {
+
+.card-content>*:first-child {
   margin-top: 8px;
 }
 
@@ -338,7 +391,8 @@ section:last-child {
   margin: 0;
 }
 
-.card p, .card ul {
+.card p,
+.card ul {
   color: inherit;
   opacity: 0.9;
   font-size: 14px;
@@ -346,7 +400,8 @@ section:last-child {
 }
 
 .card:hover {
-  transform: scale(1.05); /* Removed rotation to prevent bending sideways */
+  transform: scale(1.05);
+  /* Removed rotation to prevent bending sideways */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -378,14 +433,17 @@ section:last-child {
 
 /* Revealed state */
 .card.revealed .card-icon {
-  height: 50px; /* Adjust based on your icon size */
+  height: 50px;
+  /* Adjust based on your icon size */
   opacity: 1;
 }
 
 .card.revealed p {
-  height: 150px; /* Adjust based on your paragraph content */
+  height: 150px;
+  /* Adjust based on your paragraph content */
   opacity: 1;
 }
+
 /* Skills Styles */
 .skills {
   background-color: var(--background);
@@ -421,11 +479,13 @@ section:last-child {
   border-radius: 10px;
   width: 200px;
   box-shadow: 8px 8px 8px var(--accent-blue);
-  transition: transform 0.3s ease; /* Smooth transition for the levitation */
+  transition: transform 0.3s ease;
+  /* Smooth transition for the levitation */
 }
 
 .skill-card:hover {
-  transform: translateY(-20px); /* Moves the card up by 10px on hover */
+  transform: translateY(-20px);
+  /* Moves the card up by 10px on hover */
 }
 
 .skill-card h3 {
@@ -464,6 +524,7 @@ section:last-child {
 .publications-icons span {
   font-size: 24px;
 }
+
 /* Projects Styles */
 .projects {
   background-color: var(--background);
@@ -520,7 +581,7 @@ section:last-child {
   overflow: hidden;
 }
 
-.radio-inputs .radio input:checked + .name {
+.radio-inputs .radio input:checked+.name {
   background: var(--primary-purple);
   color: white;
   font-weight: 600;
@@ -533,27 +594,31 @@ section:last-child {
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.8);
 }
 
-.radio-inputs .radio:hover input:checked + .name {
+.radio-inputs .radio:hover input:checked+.name {
   transform: translateY(1px);
 }
 
 /* Optional: responsive shrink */
 @media (max-width: 520px) {
-  .radio-inputs { 
+  .radio-inputs {
     max-width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 0.25rem;
   }
-  
+
   .radio-inputs .radio {
     flex: none;
   }
 }
 
 /* Remove old filter button styles */
-.filter-buttons, .filter-btn, .filter-btn-active { display: none !important; }
+.filter-buttons,
+.filter-btn,
+.filter-btn-active {
+  display: none !important;
+}
 
 .project-card-container {
   display: flex;
@@ -568,10 +633,13 @@ section:last-child {
   display: flex;
   font-family: 'Noto Serif';
   justify-content: center;
-  gap: 40px; /* Increased from 20px to 40px for more space between cards */
-  flex-wrap: wrap; /* Allows cards to wrap to next line if screen is too small */
+  gap: 40px;
+  /* Increased from 20px to 40px for more space between cards */
+  flex-wrap: wrap;
+  /* Allows cards to wrap to next line if screen is too small */
   width: 100%;
-  max-width: 1200px; /* Optional: limits maximum width */
+  max-width: 1200px;
+  /* Optional: limits maximum width */
 }
 
 /* ProjectCard Styles */
@@ -681,11 +749,13 @@ section:last-child {
   cursor: pointer;
   font-weight: bold;
 }
-.project-card .demo-button:hover{
+
+.project-card .demo-button:hover {
   background-color: var(--accent-blue);
   padding: 10px 25px 10px 25px;
 }
-.project-card .demo-button a{
+
+.project-card .demo-button a {
   text-decoration: none;
   color: white;
 }
@@ -700,27 +770,44 @@ section:last-child {
 .tech-icons span {
   font-size: 24px;
 }
+
+.tech-icons img {
+  height: 30px !important;
+  width: auto !important;
+  object-fit: contain;
+}
+
 .nav-list li:hover {
-cursor: pointer;
+  cursor: pointer;
 }
 
 /* Custom Cursor Ball Styles */
 .cursor-ball {
-  position: fixed; /* Fixed positioning to follow cursor */
-  width: 20px; /* Size of the ball */
+  position: fixed;
+  /* Fixed positioning to follow cursor */
+  width: 20px;
+  /* Size of the ball */
   height: 20px;
-  background-color: #ffd700; /* Gold color to match the theme */
-  border-radius: 50%; /* Circular shape */
-  pointer-events: none; /* Prevent the ball from interfering with clicks */
-  z-index: 9999; /* Ensure it stays above other content */
-  transition: transform 0.1s ease; /* Smooth movement */
-  transform: translate(-50%, -50%); /* Center the ball on the cursor */
-  mix-blend-mode: difference; /* Optional: Creates a cool contrast effect */
+  background-color: #ffd700;
+  /* Gold color to match the theme */
+  border-radius: 50%;
+  /* Circular shape */
+  pointer-events: none;
+  /* Prevent the ball from interfering with clicks */
+  z-index: 9999;
+  /* Ensure it stays above other content */
+  transition: transform 0.1s ease;
+  /* Smooth movement */
+  transform: translate(-50%, -50%);
+  /* Center the ball on the cursor */
+  mix-blend-mode: difference;
+  /* Optional: Creates a cool contrast effect */
 }
 
 /* Optional: Hide default cursor */
 body {
-  cursor: none; /* Hides the default cursor */
+  cursor: none;
+  /* Hides the default cursor */
 }
 
 .contact {
@@ -766,9 +853,12 @@ body {
 }
 
 .contact-list li {
-  opacity: 0; /* Initially hidden */
-  transform: translateY(20px); /* Start slightly below */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth animation */
+  opacity: 0;
+  /* Initially hidden */
+  transform: translateY(20px);
+  /* Start slightly below */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  /* Smooth animation */
   margin-bottom: 20px;
   font-size: 16px;
   display: flex;
@@ -778,18 +868,34 @@ body {
 
 .contact-list.revealed li {
   opacity: 1;
-  transform: translateY(0); /* Move to original position */
+  transform: translateY(0);
+  /* Move to original position */
 }
 
 /* Staggered animation for each list item */
-.contact-list.revealed li:nth-child(1) { transition-delay: 0.1s; }
-.contact-list.revealed li:nth-child(2) { transition-delay: 0.2s; }
-.contact-list.revealed li:nth-child(3) { transition-delay: 0.3s; }
-.contact-list.revealed li:nth-child(4) { transition-delay: 0.4s; }
-.contact-list.revealed li:nth-child(5) { transition-delay: 0.5s; }
+.contact-list.revealed li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.contact-list.revealed li:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.contact-list.revealed li:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.contact-list.revealed li:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.contact-list.revealed li:nth-child(5) {
+  transition-delay: 0.5s;
+}
 
 .contact-list span {
-  font-size: 24px; /* Icon size */
+  font-size: 24px;
+  /* Icon size */
 }
 
 .contact-list a {
@@ -798,7 +904,8 @@ body {
 }
 
 .contact-list a:hover {
-  color: #d3e8f2; /* Lighter shade for hover */
+  color: #d3e8f2;
+  /* Lighter shade for hover */
 }
 
 .contact-form {
@@ -806,7 +913,7 @@ body {
   justify-content: center;
   align-items: center;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 20px auto 0;
 }
 
 .contact-input {
@@ -829,11 +936,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease; /* Add smooth transition */
+  transition: transform 0.2s ease;
+  /* Add smooth transition */
 }
 
 .contact-button:hover {
-  transform: scale(1.15); /* Scales button slightly larger without affecting layout */
+  transform: scale(1.15);
+  /* Scales button slightly larger without affecting layout */
   /* Removed padding and font-size changes that caused movement */
 }
 
@@ -847,16 +956,19 @@ body {
   height: 1000px;
   color: #ffffff;
 }
+
 .education-item {
   display: flex;
   align-items: center;
-  gap: 15px; /* Space between image and text */
+  gap: 15px;
+  /* Space between image and text */
 }
 
 .education-details {
   display: flex;
   flex-direction: column;
-  line-height: 1.4; /* Spacing between lines */
+  line-height: 1.4;
+  /* Spacing between lines */
 }
 
 .timeline-fadein:hover div {
@@ -864,29 +976,32 @@ body {
   font-weight: bold;
   transition: font-size 0.2s cubic-bezier(0.23, 1, 0.32, 1), font-weight 0.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
 /*Mobile version*/
 
 @media (max-width: 768px) {
 
   .app {
-    font-size: 14px; 
+    font-size: 14px;
   }
 
 
- .nav-list {
-  gap: 20px;
-  font-size:14px ;
- }
+  .nav-list {
+    gap: 20px;
+    font-size: 14px;
+  }
 
 
 
   .logo {
-    font-size: 24px; /* Scale down logo */
+    font-size: 24px;
+    /* Scale down logo */
     height: 40px;
   }
 
   .theme-toggle {
-    font-size: 20px; /* Scale down toggle */
+    font-size: 20px;
+    /* Scale down toggle */
     height: 25px;
   }
 
@@ -897,92 +1012,116 @@ body {
 
   /* Hero section */
   .hero {
-    padding: 30px; /* Reduce padding */
+    padding: 30px;
+    /* Reduce padding */
   }
 
   .profile-container {
-    width: 150px; /* Scale down profile image container */
+    width: 150px;
+    /* Scale down profile image container */
     height: 150px;
   }
 
   .hero h1 {
-    font-size: 24px; /* Scale down heading */
+    font-size: 24px;
+    /* Scale down heading */
   }
 
   .hero p {
-    font-size: 14px; /* Scale down text */
+    font-size: 14px;
+    /* Scale down text */
   }
 
   .btn-primary,
   .btn-secondary {
-    padding: 10px 20px; /* Reduce button padding */
-    font-size: 14px; /* Scale down button text */
+    padding: 10px 20px;
+    /* Reduce button padding */
+    font-size: 14px;
+    /* Scale down button text */
   }
 
   /* About Me section */
   .about-me {
-    padding: 20px; /* Reduce padding */
+    padding: 20px;
+    /* Reduce padding */
   }
 
   .about-me h2 {
-    font-size: 24px; /* Scale down heading */
+    font-size: 24px;
+    /* Scale down heading */
   }
 
   .about-me p {
-    font-size: 16px; /* Scale down text */
+    font-size: 16px;
+    /* Scale down text */
   }
 
   .card-container {
-    flex-direction: column; /* Stack cards vertically */
+    flex-direction: column;
+    /* Stack cards vertically */
     align-items: center;
-    gap: 15px; /* Reduce gap */
+    gap: 15px;
+    /* Reduce gap */
   }
 
   .card {
-    width: 60%; /* Make cards responsive */
-    max-width: 300px; /* Limit max width */
-    padding: 10px; /* Reduce padding */
+    width: 60%;
+    /* Make cards responsive */
+    max-width: 300px;
+    /* Limit max width */
+    padding: 10px;
+    /* Reduce padding */
   }
 
-  @media (max-width: 400px)  {
-     .card {
-   min-height: 14rem;}
+  @media (max-width: 400px) {
+    .card {
+      min-height: 14rem;
     }
-  
+  }
+
 
   .card-icon {
-    font-size: 30px; /* Scale down icon */
+    font-size: 30px;
+    /* Scale down icon */
   }
 
   .card h3 {
-    font-size: 16px; /* Scale down heading */
+    font-size: 16px;
+    /* Scale down heading */
   }
 
   .card p {
-    font-size: 12px; /* Scale down text */
+    font-size: 12px;
+    /* Scale down text */
   }
 
   /* Skills section */
   .skills {
-    padding: 30px; /* Reduce padding */
+    padding: 30px;
+    /* Reduce padding */
   }
 
   .skills h2 {
-    font-size: 24px; /* Scale down heading */
+    font-size: 24px;
+    /* Scale down heading */
   }
 
   .skills-container {
-    flex-wrap: wrap; /* Allow wrapping on mobile */
-    gap: 8px; /* Reduce gap for mobile */
+    flex-wrap: wrap;
+    /* Allow wrapping on mobile */
+    gap: 8px;
+    /* Reduce gap for mobile */
   }
 
   /* Projects section */
   .projects {
-    padding: 30px; /* Reduce padding */
+    padding: 30px;
+    /* Reduce padding */
   }
 
   .projects h2 {
-    font-size: 24px; /* Scale down heading */
+    font-size: 24px;
+    /* Scale down heading */
   }
 
   .project-card-container,
@@ -990,83 +1129,107 @@ body {
   .WebDev-Projects,
   .MobileDev-Projects,
   .Languages-Projects {
-    flex-direction: column; /* Stack cards vertically */
+    flex-direction: column;
+    /* Stack cards vertically */
     align-items: center;
-    gap: 15px; /* Reduce gap */
+    gap: 15px;
+    /* Reduce gap */
   }
 
   .project-card {
-    width: 80%; /* Make cards responsive */
-    max-width: 300px; /* Limit max width */
-    padding: 15px; /* Reduce padding */
+    width: 80%;
+    /* Make cards responsive */
+    max-width: 300px;
+    /* Limit max width */
+    padding: 15px;
+    /* Reduce padding */
   }
 
   .project-img-placeholder {
-    height: 170px; /* Scale down image placeholder */
+    height: 170px;
+    /* Scale down image placeholder */
   }
 
   .project-img-mobile-placeholder {
-    width: 30%; /* Adjust mobile placeholder width */
-    height: 200px; /* Scale down height */
+    width: 30%;
+    /* Adjust mobile placeholder width */
+    height: 200px;
+    /* Scale down height */
   }
 
   .project-card h3 {
-    font-size: 16px; /* Scale down heading */
+    font-size: 16px;
+    /* Scale down heading */
   }
 
   .project-card p {
-    font-size: 12px; /* Scale down text */
+    font-size: 12px;
+    /* Scale down text */
   }
 
   .project-card button {
-    padding: 8px 15px; /* Reduce button padding */
-    font-size: 14px; /* Scale down text */
+    padding: 8px 15px;
+    /* Reduce button padding */
+    font-size: 14px;
+    /* Scale down text */
   }
 
   /* Contact section */
   .contact {
-    padding: 30px; /* Reduce padding */
+    padding: 30px;
+    /* Reduce padding */
   }
 
   .contact h2 {
-    font-size: 24px; /* Scale down heading */
+    font-size: 24px;
+    /* Scale down heading */
   }
 
   .contact p {
-    font-size: 16px; /* Scale down text */
+    font-size: 16px;
+    /* Scale down text */
   }
 
   .contact-container {
-    flex-direction: column; /* Stack image and list vertically */
-    gap: 10px; /* Reduce gap */
+    flex-direction: column;
+    /* Stack image and list vertically */
+    gap: 40px;
+    /* Reduce gap */
   }
 
   .contact-image {
-    width: 150px; /* Scale down image */
+    width: 150px;
+    /* Scale down image */
     height: 150px;
-    
+
   }
 
   .contact-list li {
-    font-size: 14px; /* Scale down list items */
+    font-size: 14px;
+    /* Scale down list items */
     padding-bottom: 0px;
   }
 
- 
+
   .contact-input {
-    border-radius: 5px; /* Adjust border radius for standalone input */
-    padding: 10px; /* Reduce padding */
+    border-radius: 5px;
+    /* Adjust border radius for standalone input */
+    padding: 10px;
+    /* Reduce padding */
   }
 
   .contact-button {
-    border-radius: 5px; /* Adjust border radius for standalone button */
-    padding: 10px 15px; /* Reduce padding */
-    width: 20%; /* Full width button */
+    border-radius: 5px;
+    /* Adjust border radius for standalone button */
+    padding: 10px 15px;
+    /* Reduce padding */
+    width: 20%;
+    /* Full width button */
   }
 
 
   .cursor-ball {
-   cursor: none;
+    cursor: none;
   }
 }
 
@@ -1082,7 +1245,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
 }
 
 .UIUX-Projects,
@@ -1092,13 +1255,15 @@ body {
   display: flex;
   font-family: 'Noto Serif';
   justify-content: center;
-  gap: 30px; /* Gap between cards in desktop view */
+  gap: 30px;
+  /* Gap between cards in desktop view */
   flex-wrap: wrap;
   width: 100%;
   max-width: 1200px;
 }
 
 @media (max-width: 768px) {
+
   .project-card-container,
   .UIUX-Projects,
   .WebDevelopment-Projects,
@@ -1106,11 +1271,13 @@ body {
   .Otherlanguages-Projects {
     flex-direction: column;
     align-items: center;
-    gap: 10px; /* Gap between cards in mobile view */
+    gap: 10px;
+    /* Gap between cards in mobile view */
   }
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   overflow-y: auto;
   height: auto;
@@ -1164,7 +1331,7 @@ html, body {
   transition: all 0.15s ease-in-out;
 }
 
-.radio-inputs .radio input:checked + .name {
+.radio-inputs .radio input:checked+.name {
   background-color: var(--primary-purple);
   color: white;
   font-weight: 600;
@@ -1178,7 +1345,15 @@ html, body {
 /* Removed outline styles for clean solid background */
 
 @keyframes select {
-  0% { transform: scale(0.95); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(0.95);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

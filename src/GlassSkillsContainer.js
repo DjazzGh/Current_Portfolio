@@ -38,20 +38,38 @@ const GlassSkillsContainer = () => {
       ]
     },
     {
-      title: "Programming",
+      title: "CyberSecurity",
       rotation: 25,
       icon: (
+  <svg viewBox="0 0 24 24" height="1em" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+    <path d="M12 2L4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3z"/>
+    <path d="M12 11a2 2 0 012 2v1h-4v-1a2 2 0 012-2zm3 3v3H9v-3h6z"/>
+  </svg>
+),
+     
+      skills: [
+        { name: "Kali linux", icon: <img src="https://img.icons8.com/?size=100&id=qBWtR72kluCU&format=png&color=000000" alt="Python" height="20px"/> },
+        { name: "Burp Suite", icon: <img width="50" height="50" src="burp.png" alt="burp-suite"/> },
+        { name: "Python", icon: <img src="https://img.icons8.com/?size=100&id=l75OEUJkPAk4&format=png&color=000000" alt="Python" height="20px"/> },
+        { name: "C", icon: <img src="./c.svg" alt="C" height="20px"/> }
+      ]
+    },
+    {
+      title: "AI",
+      rotation: -10,
+       icon: (
         <svg viewBox="0 0 448 512" height="1em" xmlns="http://www.w3.org/2000/svg">
           <path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
         </svg>
       ),
       skills: [
-        { name: "Python", icon: <img src="https://img.icons8.com/?size=100&id=l75OEUJkPAk4&format=png&color=000000" alt="Python" height="20px"/> },
-        { name: "Java", icon: <img src="https://img.icons8.com/?size=100&id=13679&format=png&color=000000" alt="Java" height="20px"/> },
-        { name: "C", icon: <img src="./c.svg" alt="C" height="20px"/> }
+        { name: "TensorFlow", icon: <img src="https://img.icons8.com/?size=100&id=n3QRpDA7KZ7P&format=png&color=000000" alt="Git" height="20px"/> },
+        { name: "Pytorch", icon: <img src="https://img.icons8.com/?size=100&id=jH4BpkMnRrU5&format=png&color=000000" alt="GitHub" height="20px"/> },
+        { name: "Hugging Face", icon: <img src="https://img.icons8.com/?size=100&id=sop9ROXku5bb&format=png&color=000000" alt="Figma" height="20px"/> },
+       
       ]
     },
-    {
+   {
       title: "Tools",
       rotation: -10,
       icon: (
@@ -66,20 +84,6 @@ const GlassSkillsContainer = () => {
         { name: "Docker", icon: <span>🐳</span> }
       ]
     },
-    {
-      title: "Languages",
-      rotation: 15,
-      icon: (
-        <svg viewBox="0 0 640 512" height="1em" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z" />
-        </svg>
-      ),
-      skills: [
-        { name: "English", icon: <span>🇬🇧</span> },
-        { name: "French", icon: <span>🇫🇷</span> },
-        { name: "Arabic", icon: <span>🇩🇿</span> }
-      ]
-    }
   ];
 
   return (

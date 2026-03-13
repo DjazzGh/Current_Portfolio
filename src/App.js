@@ -12,6 +12,7 @@ import TrailingCursor from './TrailingCursor.js';
 function App() {
   return (
     <div className="app">
+      <TrailingCursor />
       <Header />
       <Hero id="first" />
       <AboutMe id="second" />
@@ -19,7 +20,6 @@ function App() {
       <Projects id="fourth" />
       <Experience />
       <Contact id="contact" />
-      <TrailingCursor  /> 
     </div>
   );
 }

@@ -39,7 +39,7 @@ function AboutMe() {
             <div className="card-container">
                 <div className="card">
                   <div className="card-content">
-                    <h3>📚 Education</h3>
+                    <h3>Education</h3>
                     <p>
                       <span className="education-item">
                         <img 
@@ -59,7 +59,7 @@ function AboutMe() {
                 </div>
                 <div className="card">
                   <div className="card-content">
-                    <h3> 👩🏻‍💻 Fields of Interest</h3>
+                    <h3>Fields of Interest</h3>
                     <ul>
                       <li>Full Stack Development</li>
                       <li>Cybersecurity</li>
@@ -69,9 +69,9 @@ function AboutMe() {
                 </div>
                 <div className="card">
                   <div className="card-content">
-                    <h3>🔎 What I am looking for</h3>
+                    <h3>What I am looking for</h3>
                     <ul>
-                      <li>Internships</li>
+                     
                       <li>Freelance opportunities</li>
                       <li>Part time jobs</li>
                     </ul>

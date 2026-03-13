@@ -194,8 +194,8 @@ const DownloadButton = ({ children, onClick, type = "button" }) => {
       <button className="button" onClick={onClick} type={type}>
         <div className="dots_border" />
         <svg className="button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 3a1 1 0 0 1 1 1v10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5A1 1 0 1 1 7.707 11.293L11 14.586V4a1 1 0 0 1 1-1Z"/>
-          <path d="M5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Z"/>
+          <path d="M12 3a1 1 0 0 1 1 1v10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5A1 1 0 1 1 7.707 11.293L11 14.586V4a1 1 0 0 1 1-1Z" />
+          <path d="M5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Z" />
         </svg>
         <span className="text_button">{children}</span>
       </button>

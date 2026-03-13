@@ -5,8 +5,8 @@ import InternshipCard from './InternshipCard';
 function Experience() {
   return (
     <section className="experience" id="experience" style={{ fontFamily: 'Noto Serif' }}>
-      <h2 style={{ color: 'var(--text)', textAlign: 'center', fontSize: '30px', marginBottom: '30px' }}>Experience</h2>
-      
+      <h2 style={{ color: 'var(--text)', textAlign: 'center', fontSize: '30px', marginBottom: '30px', fontWeight: '800' }}>Experience</h2>
+
       {/* Internship Card */}
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
         <InternshipCard

@@ -187,7 +187,7 @@ function Projects() {
 
   return (
     <section className="projects" id="projects">
-      <h2 style={{ marginBottom: '20px' }}>My Projects</h2>
+      <h2 style={{ marginBottom: '20px' }}>Projects</h2>
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
         <CustomRadioButtons
           categories={categories}

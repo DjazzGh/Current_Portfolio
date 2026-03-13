@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import Switch from './Switch';
 
 function Header() {
   const [isLightMode, setIsLightMode] = useState(false);
@@ -162,8 +163,8 @@ function Header() {
       `}</style>
 
       <div className={isLightMode ? 'header-container light-mode' : 'header-container'}>
-    
-        
+
+
         {/* Desktop Navigation */}
         <nav>
           <ul className="nav-list">
@@ -176,15 +177,7 @@ function Header() {
         </nav>
 
         {/* Desktop Theme Toggle */}
-        <span className="theme-toggle" onClick={toggleTheme}>
-          <img 
-            width="30" 
-            height="30"  
-            src="https://img.icons8.com/external-line-lima-studio/64/external-moon-basic-user-interface-line-lima-studio.png"
-            style={{ filter: 'brightness(0) invert(1)' }}
-            alt="theme-toggle"
-          />
-        </span>
+        <Switch isLightMode={isLightMode} toggleTheme={toggleTheme} />
 
         {/* Mobile Hamburger Menu */}
         <div className="hamburger-menu" onClick={toggleMobileMenu}>
@@ -200,7 +193,9 @@ function Header() {
           <li onClick={() => handleScroll('projects')}>Projects</li>
           <li onClick={() => handleScroll('experience')}>Experience</li>
           <li onClick={() => handleScroll('contact')}>Contact</li>
-         
+          <li style={{ display: 'flex', justifyContent: 'center', padding: '1.5rem 0' }}>
+            <Switch isLightMode={isLightMode} toggleTheme={toggleTheme} />
+          </li>
         </ul>
       </nav>
     </header>

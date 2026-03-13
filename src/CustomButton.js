@@ -192,7 +192,7 @@ const CustomButton = ({ children, onClick, type = "button" }) => {
       <button className="button" onClick={onClick} type={type}>
         <div className="dots_border" />
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="button-icon" fill="currentColor">
-          <path d="M2.25 6.75A2.25 2.25 0 0 1 4.5 4.5h15a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 19.5 19.5h-15A2.25 2.25 0 0 1 2.25 17.25V6.75Zm2.1-.75a.75.75 0 0 0-.6 1.2l7.05 5.64a.75.75 0 0 0 .93 0l7.05-5.64a.75.75 0 0 0-.6-1.2h-13.8Zm15.9 3.21-6.41 5.13a2.25 2.25 0 0 1-2.68 0L5.75 9.21v7.29c0 .414.336.75.75.75h11c.414 0 .75-.336.75-.75V9.21Z"/>
+          <path d="M2.25 6.75A2.25 2.25 0 0 1 4.5 4.5h15a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 19.5 19.5h-15A2.25 2.25 0 0 1 2.25 17.25V6.75Zm2.1-.75a.75.75 0 0 0-.6 1.2l7.05 5.64a.75.75 0 0 0 .93 0l7.05-5.64a.75.75 0 0 0-.6-1.2h-13.8Zm15.9 3.21-6.41 5.13a2.25 2.25 0 0 1-2.68 0L5.75 9.21v7.29c0 .414.336.75.75.75h11c.414 0 .75-.336.75-.75V9.21Z" />
         </svg>
         <span className="text_button">{children}</span>
       </button>
