@@ -18,7 +18,7 @@ function Experience() {
         <InternshipCard
           title="Full Stack Developer Internship"
           company="SemanticMap"
-          date="November 2025 - Present"
+          date="November 2025 - April 2026"
           description="Collaborating on the development and maintenance of a modern web application that leverages AI to streamline qualitative market research workflows, from data ingestion to insight delivery."
         />
       </Box>
