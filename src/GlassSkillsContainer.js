@@ -50,6 +50,8 @@ const GlassSkillsContainer = () => {
       skills: [
         { name: "Kali linux", icon: <img src="https://img.icons8.com/?size=100&id=qBWtR72kluCU&format=png&color=000000" alt="Python" height="20px"/> },
         { name: "Burp Suite", icon: <img width="50" height="50" src="burp.png" alt="burp-suite"/> },
+         { name: "Nmap", icon: <img src="https://img.icons8.com/?size=100&id=9b5wowKIlo9d&format=png&color=000000" alt="Python" height="20px"/> },
+          { name: "Metasploit", icon: <img src="https://img.icons8.com/?size=100&id=PW0ChfedZvTh&format=png&color=000000" alt="Python" height="20px"/> },
         { name: "Python", icon: <img src="https://img.icons8.com/?size=100&id=l75OEUJkPAk4&format=png&color=000000" alt="Python" height="20px"/> },
         { name: "C", icon: <img src="./c.svg" alt="C" height="20px"/> }
       ]

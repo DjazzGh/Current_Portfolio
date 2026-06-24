@@ -1,27 +1,67 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Radio = ({ categories, activeFilter, handleFilterClick, categoriesCount, activeIndex, isLightMode }) => {
+const Radio = ({
+  activeMainFilter,
+  setActiveMainFilter,
+  activeSubFilter,
+  setActiveSubFilter,
+  isLightMode
+}) => {
+  const mainCategories = [
+    { label: 'Development', value: 'Development' },
+    { label: 'Cybersecurity', value: 'Cybersecurity' },
+    { label: 'AI', value: 'AI' }
+  ];
+
+  const subCategories = [
+    { label: 'Web', value: 'Web' },
+    { label: 'Mobile', value: 'Mobile' }
+  ];
+
   return (
-    <StyledWrapper categoriesCount={categoriesCount} activeIndex={activeIndex} isLightMode={isLightMode}>
-      <div className="body">
-        <div className="tabs">
-          {categories.map((cat, index) => (
+    <StyledWrapper isLightMode={isLightMode}>
+      <div className="filter-container">
+        {/* Main Categories Row */}
+        <div className="tabs main-tabs">
+          {mainCategories.map((cat) => (
             <React.Fragment key={cat.value}>
               <input
                 type="radio"
-                name="project_category"
-                id={cat.value.replace(/\s/g, '')}
+                name="main_category"
+                id={`main-${cat.value}`}
                 value={cat.value}
                 className="input"
-                checked={activeFilter === cat.value}
-                onChange={() => handleFilterClick(cat.value)}
+                checked={activeMainFilter === cat.value}
+                onChange={() => setActiveMainFilter(cat.value)}
               />
-              <label htmlFor={cat.value.replace(/\s/g, '')} className="label">
+              <label htmlFor={`main-${cat.value}`} className="label">
                 {cat.label}
               </label>
             </React.Fragment>
           ))}
+        </div>
+
+        {/* Sub Categories Row (only visible/expanded for Development) */}
+        <div className={`sub-tabs-wrapper ${activeMainFilter === 'Development' ? 'show' : ''}`}>
+          <div className="tabs sub-tabs">
+            {subCategories.map((cat) => (
+              <React.Fragment key={cat.value}>
+                <input
+                  type="radio"
+                  name="sub_category"
+                  id={`sub-${cat.value}`}
+                  value={cat.value}
+                  className="input"
+                  checked={activeSubFilter === cat.value}
+                  onChange={() => setActiveSubFilter(cat.value)}
+                />
+                <label htmlFor={`sub-${cat.value}`} className="label sub-label">
+                  {cat.label}
+                </label>
+              </React.Fragment>
+            ))}
+          </div>
         </div>
       </div>
     </StyledWrapper>
@@ -29,11 +69,12 @@ const Radio = ({ categories, activeFilter, handleFilterClick, categoriesCount, a
 };
 
 const StyledWrapper = styled.div`
-  .body {
+  .filter-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    font-family: 'Noto Serif', serif;
+    gap: 16px;
+    width: 100%;
   }
 
   .tabs {
@@ -42,14 +83,15 @@ const StyledWrapper = styled.div`
     background: transparent;
     border-radius: 12px;
     padding: 4px;
-    gap: 8px;
+    gap: 16px;
     position: relative;
-    --count: ${props => props.categoriesCount};
-    --active: ${props => props.activeIndex};
   }
 
-  .tabs > .input,
-  .sr-only {
+  .main-tabs {
+    gap: 32px;
+  }
+
+  .tabs > .input {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -62,50 +104,39 @@ const StyledWrapper = styled.div`
   }
 
   .tabs .label {
-    padding: 6px 24px;
+    padding: 8px 24px;
     cursor: pointer;
     text-align: center;
     border-radius: 8px;
     font-weight: 500;
-    font-size: 14px;
-    transition: all 0.3s ease;
+    font-size: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     color: ${props => props.isLightMode ? 'var(--text)' : 'rgba(255, 255, 255, 0.7)'};
     background: transparent;
-    border: 2px solid transparent;
+    border: none;
   }
 
-  /* Mobile and Tablet: 2 items per row */
-  @media (max-width: 1024px) {
-    .tabs {
-      justify-content: center;
-    }
-    
-    .tabs .label {
-      flex: 0 0 calc(10% - 4px);
-      padding: 5px;
-      padding-bottom: 3px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+  .tabs .sub-label {
+    padding: 6px 18px;
+    font-size: 13px;
   }
 
-  /* Desktop: All items in one row */
-  @media (min-width: 1025px) {
+  /* Mobile and Tablet styling */
+  @media (max-width: 768px) {
     .tabs {
-      flex-wrap: nowrap;
+      justify-content: center;
+      width: 100%;
     }
   }
 
   .tabs :checked + .label {
     background-image: linear-gradient(43deg, var(--primary-purple) 0%, var(--accent-blue) 100%);
     color: white;
-    border: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   .input:not(:checked) + .label:hover {
-    background: ${props => props.isLightMode ? 'rgba(10, 0, 130, 0.1)' : 'rgba(0, 0, 255, 0.2)'};
+    background: ${props => props.isLightMode ? 'rgba(10, 0, 130, 0.1)' : 'rgba(255, 255, 255, 0.05)'};
     color: ${props => props.isLightMode ? 'var(--primary-purple)' : 'var(--white)'};
   }
 
@@ -113,11 +144,30 @@ const StyledWrapper = styled.div`
     content: "";
     position: absolute;
     inset: 0;
-    background: ${props => props.isLightMode ? 'rgba(10, 0, 130, 0.1)' : 'rgba(75, 0, 130, 0.15)'};
+    background: ${props => props.isLightMode ? 'rgba(10, 0, 130, 0.05)' : 'rgba(255, 255, 255, 0.03)'};
     border-radius: 12px;
     z-index: -1;
-    backdrop-filter: blur(4px);
-    border: 1px solid ${props => props.isLightMode ? 'rgba(10, 0, 130, 0.2)' : 'rgba(75, 0, 130, 0.3)'};
+    backdrop-filter: blur(8px);
+  }
+
+  /* Sub tabs wrapper with smooth transitions */
+  .sub-tabs-wrapper {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sub-tabs-wrapper.show {
+    max-height: 80px; /* enough height to display the buttons */
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 `;
 

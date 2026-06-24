@@ -10,10 +10,10 @@ function Experience() {
       {/* Internship Card */}
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
         <InternshipCard
-          title="UI/UX Design Internship"
-          company="The Virtual CTO"
-          date="May 2025 - July 2025"
-          description="Created user-friendly websites based on project requirements. I conducted user research, built personas, and designed responsive wireframes. Refined layouts for intuitive navigation and visual appeal, incorporating features like dashboards and event management to enhance the user experience."
+          title="Offensive Security Engineer Intern (R&D)"
+          company="Keystone Group Algeria"
+          date="March 2026 - April 2026"
+          description="Built an AI-powered phishing simulation platform using LangChain, automating the generation of realistic and personalized phishing campaigns for cybersecurity awareness training."
         />
         <InternshipCard
           title="Full Stack Developer Internship"
@@ -21,6 +21,14 @@ function Experience() {
           date="November 2025 - April 2026"
           description="Collaborated on the development and maintenance of a modern web application that leverages AI to streamline qualitative market research workflows, from data ingestion to insight delivery."
         />
+        <InternshipCard
+          title="UI/UX Design Internship"
+          company="The Virtual CTO"
+          date="May 2025 - July 2025"
+          description="Created user-friendly websites based on project requirements. I conducted user research, built personas, and designed responsive wireframes. Refined layouts for intuitive navigation and visual appeal, incorporating features like dashboards and event management to enhance the user experience."
+        />
+        
+        
       </Box>
     </section>
   );

@@ -29,7 +29,7 @@ function Hero() {
         </div>
         <h1 className="typewriter">Ghomari Djazia</h1>
         <p>
-       Full Stack Web Developer with a passion for Cybersecurity and AI.
+        Aspiring Cybersecurity Engineer & Full-Stack Web Developer with a Passion for AI
         </p>
         <div className="button-container">
           <CustomButton onClick={() => handleScroll('contact')}>Get In Touch</CustomButton>

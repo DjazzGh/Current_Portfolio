@@ -150,11 +150,25 @@ const projectData = [
 
     ],
   },
+    {
+    category: 'Cybersecurity',
+    imageSrc: './card11.jpeg',
+    imageClass: 'project-img-placeholder',
+    title: 'Penetration Test Lab – Metasploitable2',
+    description: 'Executed a full-cycle penetration test on a Linux target, leveraging Nmap, Gobuster, Nikto, and John the Ripper to identify, exploit, and document security vulnerabilities, culminating in root access and a comprehensive remediation report.',
+    githubLink: 'https://github.com/DjazzGh/Pentesting',
+    techIcons: [
+      { src: 'https://img.icons8.com/?size=100&id=qBWtR72kluCU&format=png&color=000000', alt: 'C++ Logo', label: 'C++' },
+{ src: 'https://img.icons8.com/?size=100&id=9b5wowKIlo9d&format=png&color=000000', alt: 'C++ Logo', label: 'C++' },
+{ src: 'https://img.icons8.com/?size=100&id=PW0ChfedZvTh&format=png&color=000000', alt: 'C++ Logo', label: 'C++' },
+    ],
+  },
 
 ];
 
 function Projects() {
-  const [activeFilter, setActiveFilter] = useState('Web Development');
+  const [activeMainFilter, setActiveMainFilter] = useState('Development');
+  const [activeSubFilter, setActiveSubFilter] = useState('Web');
   const [isLightMode, setIsLightMode] = useState(false);
 
   useEffect(() => {
@@ -173,55 +187,67 @@ function Projects() {
     return () => observer.disconnect();
   }, []);
 
-  const handleFilterClick = (filter) => {
-    setActiveFilter(filter);
-  };
+  const activeCategoryFilter = activeMainFilter === 'Development'
+    ? (activeSubFilter === 'Web' ? 'Web Development' : 'Mobile Development')
+    : activeMainFilter;
 
-  const categories = [
-
-    { label: 'Web Development', value: 'Web Development' },
-    { label: 'Mobile Development', value: 'Mobile Development' },
-
-    { label: 'AI', value: 'AI' },
-  ];
+  const filteredProjects = projectData.filter(
+    (proj) => proj.category === activeCategoryFilter
+  );
 
   return (
     <section className="projects" id="projects">
       <h2 style={{ marginBottom: '20px' }}>Projects</h2>
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
         <CustomRadioButtons
-          categories={categories}
-          activeFilter={activeFilter}
-          handleFilterClick={handleFilterClick}
-          categoriesCount={categories.length}
-          activeIndex={categories.findIndex(cat => cat.value === activeFilter)}
+          activeMainFilter={activeMainFilter}
+          setActiveMainFilter={setActiveMainFilter}
+          activeSubFilter={activeSubFilter}
+          setActiveSubFilter={setActiveSubFilter}
           isLightMode={isLightMode}
         />
       </div>
-      <div className="project-card-container" style={{ gap: '1.5rem' }}>
-        {categories.map((cat) => (
-          <div
-            key={cat.value}
-            className={`${cat.value.replace(/\s/g, '')}-Projects`}
-            style={{
-              display: activeFilter === cat.value ? 'flex' : 'none',
-              flexWrap: 'wrap',
-              gap: '2rem',
-              alignItems: 'stretch',
-              justifyContent: 'center',
-            }}
-          >
-            {projectData
-              .filter((proj) => proj.category === cat.value)
-              .map((proj, idx) => (
-                <ProjectCard
-                  key={proj.title + idx}
-                  {...proj}
-                  showGithubButton={proj.category !== 'UIUX'}
-                />
-              ))}
-          </div>
-        ))}
+      <div className="project-card-container" style={{ gap: '1.5rem', width: '100%' }}>
+        <div
+          className={`${activeCategoryFilter.replace(/\s/g, '')}-Projects`}
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '2rem',
+            alignItems: 'stretch',
+            justifyContent: 'center',
+            width: '100%',
+          }}
+        >
+          {filteredProjects.length > 0 ? (
+            filteredProjects.map((proj, idx) => (
+              <ProjectCard
+                key={proj.title + idx}
+                {...proj}
+                showGithubButton={proj.category !== 'UIUX'}
+              />
+            ))
+          ) : (
+            <div
+              style={{
+                padding: '40px 20px',
+                color: isLightMode ? '#666' : 'rgba(255, 255, 255, 0.6)',
+                fontSize: '16px',
+                fontStyle: 'italic',
+                textAlign: 'center',
+                background: isLightMode ? 'rgba(0, 0, 0, 0.05)' : 'rgba(255, 255, 255, 0.03)',
+                borderRadius: '12px',
+                border: `1px dashed ${isLightMode ? 'rgba(0, 0, 0, 0.15)' : 'rgba(255, 255, 255, 0.15)'}`,
+                width: '100%',
+                maxWidth: '600px',
+                margin: '0 auto',
+                backdropFilter: 'blur(4px)',
+              }}
+            >
+              No projects available in this category yet. Stay tuned!
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
