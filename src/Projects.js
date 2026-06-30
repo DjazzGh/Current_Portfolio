@@ -163,6 +163,19 @@ const projectData = [
 { src: 'https://img.icons8.com/?size=100&id=PW0ChfedZvTh&format=png&color=000000', alt: 'C++ Logo', label: 'C++' },
     ],
   },
+  {
+    category: 'Cybersecurity',
+    imageSrc: './card12.png',
+    imageClass: 'project-img-placeholder',
+    title: 'SSH Brute-Force Detection Lab (Wazuh SIEM)',
+    description: 'Created a security monitoring lab that simulates a real-world SSH brute-force attack and demonstrates end-to-end detection, analysis, and automated response using Wazuh as the SIEM/XDR platform and Kali Linux as the attacker machine.',
+    githubLink: 'https://github.com/DjazzGh/ssh-brute-force-detection-lab-wazuh',
+    techIcons: [
+      { src: 'https://img.icons8.com/?size=100&id=qBWtR72kluCU&format=png&color=000000', alt: 'C++ Logo', label: 'C++' },
+{ src: 'https://img.icons8.com/?size=100&id=63208&format=png&color=000000', alt: 'C++ Logo', label: 'C++' },
+{ src: 'https://wazuh.com/wp-content/themes/wazuh-v3/assets/images/trademark-and-brand-policy/Wazuh-logo-dark-backgroud.png', alt: 'C++ Logo', label: 'C++' },
+    ],
+  },
 
 ];
 
